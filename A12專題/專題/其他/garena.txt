@@ -1,0 +1,205 @@
+import requests
+import json
+import pyodbc
+
+
+def main():
+    for i in range(0, 1020, 20):
+        resp = requests.get(
+            'https://acs-garena.leagueoflegends.com/v1/stats/player_history/TW/104398370?begIndex=' + str(i) + '&endIndex=' + str(i + 20) + '&')
+        data = json.loads(resp.text)
+        game = data['games']['games']
+
+        for recentgame in game:
+            gameid = recentgame['gameId']
+            game = requests.get("https://acs-garena.leagueoflegends.com/v1/stats/game/TW/" + str(gameid))
+            time = requests.get(
+                "https://acs-garena.leagueoflegends.com/v1/stats/game/TW/" + str(gameid) + "/timeline")
+            doc = json.loads(game.text)
+            if int(doc['gameDuration']) < 300:
+                continue
+            if str(doc['queueId']) != '420' and str(doc['queueId']) != '440':
+                continue
+            doc2 = json.loads(time.text)
+            record(doc)
+            timeline(doc2, doc, gameid)
+
+
+def record(doc):
+    conn = pyodbc.connect(
+        'DRIVER={SQL Server Native Client 11.0}; SERVER=192.168.0.15\SQLEXPRESS; DATABASE=lol; UID=sa; PWD=a27336622')
+    cursor = conn.cursor()
+
+    player = []
+    '''420 = 一般積分 440 = 彈性積分'''
+
+    if doc['teams'][0]['win'] == 'Win':
+        win = '100'
+    else:
+        win = '200'
+
+    '''insert game'''
+    cursor.execute("insert into game values(?,?,?)", doc['gameId'], doc['gameDuration'], win)
+    cursor.commit()
+
+    for i in range(2):
+        '''insert team'''
+        cursor.execute("insert into team values(?,?,?,?,?,?,?,?,?,?,?,?)", doc['gameId'], doc['teams'][i]['teamId'],
+                       doc['teams'][i]['towerKills'], doc['teams'][i]['inhibitorKills'], \
+                       doc['teams'][i]['baronKills'], doc['teams'][i]['dragonKills'],
+                       doc['teams'][i]['riftHeraldKills'], doc['teams'][i]['bans'][0]['championId'],
+                       doc['teams'][i]['bans'][1]['championId'], \
+                       doc['teams'][i]['bans'][2]['championId'], doc['teams'][i]['bans'][3]['championId'],
+                       doc['teams'][i]['bans'][4]['championId'])
+
+        cursor.commit()
+
+    for i in range(10):
+
+        '''insert fight'''
+        cursor.execute("insert into fight values(?,?,?,?,?,?,?,?,?,?)", doc['gameId'],
+                       doc['participantIdentities'][i]['player']['accountId'], doc['participants'][i]['teamId'],
+                       doc['participants'][i]['championId'], doc['participants'][i]['stats']['kills'], \
+                       doc['participants'][i]['stats']['deaths'], doc['participants'][i]['stats']['assists'],
+                       doc['participants'][i]['stats']['champLevel'],
+                       doc['participants'][i]['stats']['largestKillingSpree'], \
+                       doc['participants'][i]['stats']['largestMultiKill'])
+
+        '''insert damage'''
+        cursor.execute("insert into damage values(?,?,?,?,?,?,?,?,?,?,?,?,?)", doc['gameId'],
+                       doc['participantIdentities'][i]['player']['accountId'],
+                       doc['participants'][i]['stats']['totalDamageDealtToChampions'],
+                       doc['participants'][i]['stats']['physicalDamageDealtToChampions'],
+                       doc['participants'][i]['stats']['magicDamageDealtToChampions'], \
+                       doc['participants'][i]['stats']['trueDamageDealtToChampions'],
+                       doc['participants'][i]['stats']['totalDamageDealt'],
+                       doc['participants'][i]['stats']['physicalDamageDealt'],
+                       doc['participants'][i]['stats']['magicDamageDealt'], \
+                       doc['participants'][i]['stats']['trueDamageDealt'],
+                       doc['participants'][i]['stats']['largestCriticalStrike'],
+                       doc['participants'][i]['stats']['damageDealtToObjectives'],
+                       doc['participants'][i]['stats']['damageDealtToTurrets'])
+
+        '''insert heal'''
+        cursor.execute("insert into heal values(?,?,?,?,?,?,?)", doc['gameId'],
+                       doc['participantIdentities'][i]['player']['accountId'],
+                       doc['participants'][i]['stats']['totalHeal'],
+                       doc['participants'][i]['stats']['totalDamageTaken'],
+                       doc['participants'][i]['stats']['physicalDamageTaken'], \
+                       doc['participants'][i]['stats']['magicalDamageTaken'],
+                       doc['participants'][i]['stats']['trueDamageTaken'])
+
+        '''insert ward'''
+        cursor.execute("insert into ward values(?,?,?,?,?)", doc['gameId'],
+                       doc['participantIdentities'][i]['player']['accountId'],
+                       doc['participants'][i]['stats']['wardsPlaced'], doc['participants'][i]['stats']['wardsKilled'],
+                       doc['participants'][i]['stats']['visionWardsBoughtInGame'])
+
+        '''insert gold'''
+        cursor.execute("insert into gold values(?,?,?,?,?,?,?,?)", doc['gameId'],
+                       doc['participantIdentities'][i]['player']['accountId'],
+                       doc['participants'][i]['stats']['goldEarned'], doc['participants'][i]['stats']['goldSpent'],
+                       doc['participants'][i]['stats']['totalMinionsKilled'], \
+                       doc['participants'][i]['stats']['neutralMinionsKilled'],
+                       doc['participants'][i]['stats']['neutralMinionsKilledTeamJungle'],
+                       doc['participants'][i]['stats']['neutralMinionsKilledEnemyJungle'])
+
+        '''insert item'''
+        cursor.execute("insert into item values(?,?,?,?,?,?,?,?,?)", doc['gameId'],
+                       doc['participantIdentities'][i]['player']['accountId'], doc['participants'][i]['stats']['item0'],
+                       doc['participants'][i]['stats']['item1'], doc['participants'][i]['stats']['item2'], \
+                       doc['participants'][i]['stats']['item3'], doc['participants'][i]['stats']['item4'],
+                       doc['participants'][i]['stats']['item5'], doc['participants'][i]['stats']['item6'])
+
+        cursor.commit()
+
+        '''insert player'''
+        player.clear()
+        cursor.execute("select accountid from player where accountid = ? ",
+                       doc['participantIdentities'][i]['player']['accountId'])
+        rows = cursor.fetchall()
+        for row in rows:
+            player.append(row.accountid)
+        if not player:
+            cursor.execute("insert into player values(?,?,?,?)", doc['participantIdentities'][i]['player']['accountId'],
+                           doc['participantIdentities'][i]['player']['summonerId'],
+                           doc['participantIdentities'][i]['player']['summonerName'],
+                           doc['participantIdentities'][i]['player']['platformId'])
+            cursor.commit()
+
+
+def timeline(doc, doc2, gameid):
+    conn = pyodbc.connect(
+        'DRIVER={SQL Server Native Client 11.0}; SERVER=192.168.0.15\SQLEXPRESS; DATABASE=lol; UID=sa; PWD=a27336622')
+    cursor = conn.cursor()
+    accountid = []
+    for i in range(10):
+        accountid.append(doc2['participantIdentities'][i]['player']['accountId'])
+
+    for i in doc['frames']:
+        if i == doc['frames'][-1]:
+            for j in range(1, 11):
+                cursor.execute("insert into player_state values(? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ?)", gameid,
+                               accountid[int(i['participantFrames'][str(j)]['participantId']) - 1], \
+                               i['timestamp'], '', '', i['participantFrames'][str(j)]['currentGold'],
+                               i['participantFrames'][str(j)]['totalGold'], i['participantFrames'][str(j)]['level'], \
+                               i['participantFrames'][str(j)]['xp'], i['participantFrames'][str(j)]['minionsKilled'],
+                               i['participantFrames'][str(j)]['jungleMinionsKilled'])
+        else:
+            for j in range(1, 11):
+                cursor.execute("insert into player_state values(? , ? , ? , ? , ? , ? , ? , ? , ? , ? , ?)", gameid,
+                               accountid[int(i['participantFrames'][str(j)]['participantId']) - 1], \
+                               i['timestamp'], i['participantFrames'][str(j)]['position']['x'],
+                               i['participantFrames'][str(j)]['position']['y'],
+                               i['participantFrames'][str(j)]['currentGold'],
+                               i['participantFrames'][str(j)]['totalGold'], i['participantFrames'][str(j)]['level'], \
+                               i['participantFrames'][str(j)]['xp'], i['participantFrames'][str(j)]['minionsKilled'],
+                               i['participantFrames'][str(j)]['jungleMinionsKilled'])
+
+        cursor.commit()
+
+        for j in i['events']:
+            if j['type'] == 'SKILL_LEVEL_UP':
+                cursor.execute("insert into skill_level values(? , ? , ? , ?)", gameid,
+                               accountid[int(j['participantId']) - 1], j['timestamp'], j['skillSlot'])
+            elif j['type'] == 'ITEM_PURCHASED':
+                cursor.execute("insert into item_purchase values(? , ? , ? , ?)", gameid,
+                               accountid[int(j['participantId']) - 1], j['timestamp'], j['itemId'])
+            elif j['type'] == 'ITEM_DESTROYED':
+                cursor.execute("insert into item_destroy values(? , ? , ? , ?)", gameid,
+                               accountid[int(j['participantId']) - 1], j['timestamp'], j['itemId'])
+            elif j['type'] == 'ITEM_UNDO':
+                cursor.execute("insert into item_undo values(? , ? , ? , ? , ?)", gameid,
+                               accountid[int(j['participantId']) - 1], j['timestamp'], j['afterId'], j['beforeId'])
+            elif j['type'] == 'ITEM_SOLD':
+                cursor.execute("insert into item_sold values(? , ? , ? , ?)", gameid,
+                               accountid[int(j['participantId']) - 1], j['timestamp'], j['itemId'])
+            elif j['type'] == 'WARD_PLACED':
+                cursor.execute("insert into ward_place values(? , ? , ? , ?)", gameid,
+                               accountid[int(j['creatorId']) - 1], j['timestamp'], j['wardType'])
+            elif j['type'] == 'WARD_KILL':
+                cursor.execute("insert into ward_kill values(? , ? , ? , ?)", gameid, accountid[int(j['killerId']) - 1],
+                               j['timestamp'], j['wardType'])
+            elif j['type'] == 'CHAMPION_KILL':
+                cursor.execute("insert into champ_kill values(? , ? , ? , ? , ? , ?)", gameid, j['timestamp'],
+                               j['position']['x'], j['position']['y'], accountid[int(j['killerId']) - 1],
+                               accountid[int(j['victimId']) - 1])
+            elif j['type'] == 'BUILDING_KILL':
+                cursor.execute("insert into building_kill values(? , ? , ? , ? , ? , ? , ? , ? , ?)", gameid,
+                               j['timestamp'], j['position']['x'], j['position']['y'] \
+                               , accountid[int(j['killerId']) - 1], j['teamId'], j['buildingType'], j['laneType'],
+                               j['towerType'])
+            elif j['type'] == 'ELITE_MONSTER_KILL':
+                if 'monsterSubType' in j:
+                    cursor.execute("insert into monster_kill values(? , ? , ? , ? , ? , ? , ?)", gameid, j['timestamp'],
+                                   j['position']['x'], j['position']['y'], accountid[int(j['killerId']) - 1],
+                                   j['monsterType'], j['monsterSubType'])
+                else:
+                    cursor.execute("insert into monster_kill values(? , ? , ? , ? , ? , ? , ?)", gameid, j['timestamp'],
+                                   j['position']['x'], j['position']['y'], accountid[int(j['killerId']) - 1],
+                                   j['monsterType'], '')
+
+            cursor.commit()
+
+
+main()

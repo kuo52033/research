@@ -1,0 +1,284 @@
+use lol
+
+CREATE TABLE player (
+   accountid varchar(20)not null,
+   summonerid varchar(20),
+   summoner_name varchar(35),
+   platformid varchar(8)
+) 
+
+ALTER TABLE player
+  ADD PRIMARY KEY (accountid);
+
+CREATE TABLE game (
+   gameid varchar(20)not null,
+   game_duration int,
+   win varchar(7)
+) 
+
+ALTER TABLE game
+  ADD PRIMARY KEY (gameid);
+
+CREATE TABLE team (
+   gameid varchar(20)not null,
+   teamid varchar(7)not null,
+   tower_kill int,
+   inhibitor_kill int,
+   baron_kill int,
+   dragon_kill int,
+   riftherald_kill int,
+   ban1 varchar(7),
+   ban2 varchar(7),
+   ban3 varchar(7),
+   ban4 varchar(7),
+   ban5 varchar(7)
+) 
+
+ALTER TABLE team
+  ADD PRIMARY KEY (gameid , teamid );
+
+CREATE TABLE fight (
+   gameid varchar(20) NOT NULL,
+   accountid varchar(20) NOT NULL,
+   teamid varchar(5) , 
+   champion nvarchar(20) ,
+   kills int ,
+   deaths int ,
+   assists int ,
+   champ_level int ,
+   largest_killing_spree int ,
+   largest_multi_kill int ,
+) 
+
+ALTER TABLE fight
+  ADD PRIMARY KEY (gameid , accountid);
+
+  
+  CREATE TABLE damage (
+   gameid varchar(20)not null,
+   accountid varchar(20)not null,
+   total_dmg_champ int,
+   physical_dmg_champ int,
+   magic_dmg_champ int,
+   true_dmg_champ int,
+   total_dmg int , 
+   phsical_dmg int,
+   magic_dmg int,
+   true_dmg int,
+   large_strike int,
+   dmg_objective int,
+   dmg_tower int
+) 
+
+ALTER TABLE damage
+  ADD PRIMARY KEY (gameid , accountid);
+
+  
+  CREATE TABLE heal (
+   gameid varchar(20)not null,
+   accountid varchar(20)not null,
+   tolal_heal int,
+   total_dmg_taken int,
+   phsical_dmg_taken int,
+   magic_dmg_taken int,
+   true_dmg_taken int 
+) 
+
+ALTER TABLE heal
+  ADD PRIMARY KEY (gameid , accountid);
+
+   CREATE TABLE ward (
+   gameid varchar(20)not null,
+   accountid varchar(20)not null,
+   word_place int,
+   word_kill int,
+   vision_word_buy int
+) 
+
+ALTER TABLE ward
+  ADD PRIMARY KEY (gameid , accountid);
+
+    CREATE TABLE gold (
+   gameid varchar(20)not null,
+   accountid varchar(20)not null,
+   gold_earn int,
+   gold_spend int,
+   minion_skill int,
+   neutral_minions_kill int,
+   team_jungle_kill int,
+   enemy_jungle_kill int
+) 
+
+ALTER TABLE gold
+  ADD PRIMARY KEY (gameid , accountid);
+
+      CREATE TABLE item (
+   gameid varchar(20)not null,
+   accountid varchar(20)not null,
+   item0 int,
+   item1 int,
+   item2 int,
+   item3 int,
+   item4 int,
+   item5 int,
+   item6 int,
+) 
+
+ALTER TABLE item
+  ADD PRIMARY KEY (gameid , accountid);
+
+create table player_state(
+   gameid varchar(20)not null,
+   accountid varchar(20)not null , 
+   time_stamp int not null ,
+   position_x int , 
+   position_y int , 
+   current_gold int , 
+   total_gold int , 
+   champ_level int , 
+   xp int , 
+   minions_kill int,
+   jgminions_kill int
+   )
+
+ALTER TABLE player_state
+ADD PRIMARY KEY (gameid , accountid , time_stamp);
+
+create table champ_kill(
+   gameid varchar(20)not null,
+   time_stamp int not null ,
+   position_x int , 
+   position_y int , 
+   killerid varchar(20) not null , 
+   victimid varchar(20) not null , 
+ )
+
+ALTER TABLE champ_kill
+ADD PRIMARY KEY (gameid ,time_stamp , killerid , victimid);
+
+create table skill_level(
+   gameid varchar(20)not null,
+   accountid varchar(20)not null , 
+   time_stamp int not null ,
+   skill_slot int
+   )
+
+create table item_purchase(
+   gameid varchar(20)not null,
+   accountid varchar(20)not null , 
+   time_stamp int not null ,
+   itemid varchar(5) not null
+   )
+
+
+create table item_destroy(
+   gameid varchar(20)not null,
+   accountid varchar(20)not null , 
+   time_stamp int not null ,
+   itemid varchar(5) not null
+   )
+
+
+
+create table item_undo(
+   gameid varchar(20)not null,
+   accountid varchar(20)not null , 
+   time_stamp int not null ,
+   afterid varchar(5) not null , 
+   beforeid varchar(5) 
+   )
+
+create table item_sold(
+   gameid varchar(20)not null,
+   accountid varchar(20)not null , 
+   time_stamp int not null ,
+   itemid varchar(5) not null
+   )
+
+
+create table ward_place(
+   gameid varchar(20)not null,
+   accountid varchar(20)not null , 
+   time_stamp int not null ,
+   ward_type varchar(15) not null
+   )
+
+
+create table ward_kill(
+   gameid varchar(20)not null,
+   accountid varchar(20)not null , 
+   time_stamp int not null ,
+   ward_type varchar(15) not null
+   )
+
+
+create table building_kill(
+   gameid varchar(20)not null,
+   time_stamp int not null ,
+   position_x int , 
+   position_y int , 
+   killerid varchar(20) not null , 
+   teamid varchar(5) ,
+   building_type varchar(20) , 
+   lane_type varchar(20) , 
+   tower_type varchar(20)
+   )
+
+ALTER TABLE building_kill
+ADD PRIMARY KEY (gameid  , time_stamp , killerid);
+
+create table monster_kill(
+   gameid varchar(20)not null,
+   time_stamp int not null ,
+   position_x int , 
+   position_y int , 
+   killerid varchar(20) not null , 
+   monster_type varchar(20) , 
+   monster_subtype varchar(20) 
+   )
+
+ALTER TABLE monster_kill
+ADD PRIMARY KEY (gameid  , time_stamp , killerid);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

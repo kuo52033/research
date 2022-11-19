@@ -1,0 +1,6 @@
+select gameid
+from(
+select gameid , count(gameid) as c
+from fight
+group by gameid) as a
+where a.c !=10

@@ -1,0 +1,56 @@
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.datasets import load_wine
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import GridSearchCV
+import numpy as np
+import pandas as pd
+import graphviz
+import matplotlib.pyplot as plt
+import pyodbc
+
+conn = pyodbc.connect('DRIVER={SQL Server Native Client 11.0}; SERVER=192.168.0.13\SQLEXPRESS; DATABASE=lol; UID=sa; PWD=a27336622')
+
+query = "select win , fight.gameid , teamid , lane , winrate from fight join champion on champion.id = fight.champion join game on game.gameid = fight.gameid left join eachchamp_winrate as e on e.accountid = fight.accountid and e.champ_name = champion.champ_name order by fight.gameid"
+data = pd.read_sql(query, conn)
+
+data["winrate"] = data["winrate"].fillna(50.00)
+
+i = data["gameid"].unique().tolist() 
+data["gameid"] = data["gameid"].apply(lambda x: i.index(x))
+data.iloc[: , 0 ] = (data['win'] =='100').astype('int') #100 = 藍方(1) 200 = 紅方(0)
+data.iloc[: , 2 ] = (data['teamid'] =='100').astype('int')
+
+dic = {"win":[] , "blue_top":[] , "blue_mid":[], "blue_ad":[] , "blue_sup":[] , "blue_jg":[] ,"red_top":[] , "red_mid":[] , "red_ad":[] , "red_sup":[] , "red_jg":[] }
+data2 = pd.DataFrame(dic)
+
+col = ["blue_top" , "blue_mid", "blue_ad" , "blue_sup" , "blue_jg"]
+col2 = ["red_top" , "red_mid" , "red_ad" , "red_sup" , "red_jg"]
+lane = ["TOP" , "MIDDLE" , "ADC" , "SUPPORT" , "JUNGLE"]
+for i , j in zip(col , lane):
+    winrate = data.query("teamid == 1 & lane == @j")
+    data2[i] = winrate.reset_index(drop = True)["winrate"]
+for i , j in zip(col2 , lane):
+    winrate = data.query("teamid == 0 & lane == @j")
+    data2[i] = winrate.reset_index(drop = True)["winrate"]
+win = data.query("teamid == 1 & lane == 'MIDDLE'")
+data2["win"] = win.reset_index(drop = True)["win"]
+
+fea = data2.iloc[: , data2.columns != 'win']
+tar = data2.iloc[: , data2.columns == 'win']
+
+xtrain , xtest ,ytrain , ytest = train_test_split(fea , tar , test_size = 0.3)
+#index重新排序
+for i in (xtrain , xtest ,ytrain , ytest):
+    i.index = range(i.shape[0])
+'''
+clf = DecisionTreeClassifier(random_state = 30 , max_depth=7 )
+clf = clf.fit(xtrain , ytrain)
+score = clf.score(xtest , ytest)
+'''
+rfc = RandomForestClassifier( n_estimators=181 , random_state=11 )
+rfc = rfc.fit(xtrain , ytrain.values.ravel())
+score  = rfc.score(xtest , ytest)
+
+score

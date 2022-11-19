@@ -1,0 +1,54 @@
+query  = 'select gameid , fight.accountid ,summoner_name , teamid , lane , winrate , champion.champ_name from fight join player on player.accountid = fight.accountid join champion on champion.id = fight.champion left join eachchamp_winrate as e on e.accountid = fight.accountid and e.champ_name = champion.champ_name where gameid in( SELECT TOP 1 gameid FROM game ORDER BY NEWID())'
+random_one = pd.read_sql(query, conn)
+random_one["winrate"] = random_one["winrate"].fillna(40.00)
+random_one['teamid'] = (random_one['teamid'] =='100').astype('int')
+
+lastpick = random_one.query("teamid == 0").sample(n = 1)
+lastpick_id = lastpick["accountid"].values[0]
+lastpick_lane = lastpick['lane'].values[0]
+lastpick_name = lastpick['summoner_name'].values[0]
+team = 0
+
+other = random_one.query("teamid == 0 & accountid != @lastpick_id").reset_index(drop = True)
+
+other_champ_blue = random_one.query("accountid != @lastpick_id & teamid == 1")["champ_name"].tolist()
+other_champ_red = random_one.query("accountid != @lastpick_id & teamid == 0")["champ_name"].tolist()
+
+last_champ_ = []
+last_winrate_ = []
+cursor = conn.cursor()
+cursor.execute('select e.champ_name , winrate from eachchamp_winrate as e join champ_lane as c on c.champ_name = e.champ_name where accountid  = ? and lane = ?' , lastpick_id , lastpick_lane)
+rows = cursor.fetchall()
+for i in rows:
+    last_champ_.append(i.champ_name)
+    last_winrate_.append(i.winrate)
+    
+attribute = att.columns
+tail_test = pd.DataFrame(columns= attribute)
+tail_test2 = pd.DataFrame(columns= attribute)
+
+for i in lane:
+    rate = other.query("lane == @i")
+    tail_test[i] = rate.reset_index(drop = True)["winrate"]
+for j in other_champ_red:
+    tail_test[j] = 2
+for k in other_champ_blue:
+    tail_test[j] = 1
+tail_test = tail_test.fillna(0)
+  
+tail_test2 = pd.concat([tail_test]*len(last_winrate_)).reset_index(drop = True)
+tail_test2['TEAM'] = tail_test2['TEAM'].fillna(team)
+
+for k in range(len(last_winrate_)):
+    tail_test2.loc[k , lastpick_lane] =last_winrate_[k]
+    tail_test2.loc[k , last_champ_[k]] = 2
+    
+pro = rfc.predict_proba(tail_test2)
+
+best_win_rate = np.max(pro , axis = 0)[0]
+i = np.where(pro == best_win_rate)
+for k in range(len(i[0])):
+    if i[1][k] == team:
+        best_champ = last_champ_[i[0][k]]
+        best_champ_win_rate = last_winrate_[i[0][k]]
+        print(best_champ , best_champ_win_rate , best_win_rate*100 )

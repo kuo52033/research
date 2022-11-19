@@ -1,0 +1,91 @@
+use lol
+CREATE TABLE 戰鬥紀錄 (
+   遊戲id varchar(20) NOT NULL,
+   玩家id varchar(20) NOT NULL,
+   陣營 varchar(5) , 
+   英雄 nvarchar(20) ,
+   擊殺 int ,
+   死亡 int ,
+   助攻 int ,
+   等級 int ,
+   同時最高擊殺數 int ,
+   最高連殺 int ,
+) 
+
+ALTER TABLE 戰鬥紀錄
+  ADD PRIMARY KEY (遊戲id , 玩家id);
+
+  
+  CREATE TABLE 傷害紀錄 (
+   遊戲id varchar(20)not null,
+   玩家id varchar(20)not null,
+   對英雄傷害 int,
+   對英雄物傷 int,
+   對英雄法傷 int,
+   對英雄真傷 int,
+   輸出傷害 int , 
+   物理傷害 int,
+   魔法傷害 int,
+   真實傷害 int,
+   最高暴擊傷害 int
+) 
+
+ALTER TABLE 傷害紀錄
+  ADD PRIMARY KEY (遊戲id , 玩家id);
+
+  
+  CREATE TABLE 承受紀錄 (
+   遊戲id varchar(20)not null,
+   玩家id varchar(20)not null,
+   回復生命 int,
+   承受傷害 int,
+   承受物傷 int,
+   承受法傷 int,
+   承受真傷 int 
+) 
+
+ALTER TABLE 承受紀錄
+  ADD PRIMARY KEY (遊戲id , 玩家id);
+
+   CREATE TABLE 守衛紀錄 (
+   遊戲id varchar(20)not null,
+   玩家id varchar(20)not null,
+   放置守衛 int,
+   清除守衛 int,
+   購買真視守衛 int
+) 
+
+ALTER TABLE 守衛紀錄
+  ADD PRIMARY KEY (遊戲id , 玩家id);
+
+    CREATE TABLE 收入紀錄 (
+   遊戲id varchar(20)not null,
+   玩家id varchar(20)not null,
+   獲得金錢 int,
+   花費金錢 int,
+   擊殺小兵 int,
+   擊殺野怪 int,
+   擊殺自家野怪 int,
+   擊殺敵方野怪 int
+) 
+
+ALTER TABLE 收入紀錄
+  ADD PRIMARY KEY (遊戲id , 玩家id);
+
+  CREATE TABLE 玩家 (
+   玩家id varchar(20)not null,
+   玩家名子 nvarchar(35),
+   網址 varchar(90),
+   狀態 varchar(7)
+) 
+
+ALTER TABLE 玩家
+  ADD PRIMARY KEY (玩家id);
+
+    CREATE TABLE 遊戲 (
+   遊戲id varchar(20)not null,
+   贏方 varchar(7),
+) 
+
+ALTER TABLE 遊戲
+  ADD PRIMARY KEY (遊戲id);

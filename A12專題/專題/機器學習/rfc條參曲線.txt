@@ -1,0 +1,12 @@
+score_ = []
+for i in range(0 , 200 , 10):
+    rfc = RandomForestClassifier( n_estimators=i+1 , 
+                                 random_state= 30)
+    rfc = rfc.fit(xtrain , ytrain.values.ravel())
+    score  = rfc.score(xtest , ytest)
+    score_.append(score)
+
+print(max(score_) , (score_.index(max(score_))*10)+1)
+plt.figure(figsize=[20 , 5])
+plt.plot(range(1 , 201 , 10) , score_)
+plt.show()

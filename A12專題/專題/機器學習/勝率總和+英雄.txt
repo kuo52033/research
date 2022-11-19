@@ -1,0 +1,98 @@
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.datasets import load_wine
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import GridSearchCV
+import numpy as np
+import pandas as pd
+import graphviz
+import matplotlib.pyplot as plt
+import pyodbc
+
+conn = pyodbc.connect('DRIVER={SQL Server Native Client 11.0}; SERVER=192.168.0.13\SQLEXPRESS; DATABASE=lol; UID=sa; PWD=a27336622')
+
+query = "select fight.gameid , champ_name , win , teamid from fight , champion , game where champion.id = fight.champion and game.gameid = fight.gameid and game.gameid not in(select distinct gameid from(select win , fight.gameid , teamid , lane , winrate from fight join champion on champion.id = fight.champion join game on game.gameid = fight.gameid left join eachchamp_winrate as e on e.accountid = fight.accountid and e.champ_name = champion.champ_name ) as a where a.winrate is NULL)"
+data = pd.read_sql(query, conn)
+#i = data["gameid"].unique().tolist() 
+#data["gameid"] = data["gameid"].apply(lambda x: i.index(x)) #將gameid 轉為從0開始
+data.iloc[: , 2 ] = (data['win'] =='100').astype('int') #100 = 藍方(1) 200 = 紅方(0)
+data.iloc[: , 3 ] = (data['teamid'] =='100').astype('int') #100 = 藍方(1) 200 = 紅方(0)
+
+x = pd.get_dummies(data.champ_name) 
+x2 = data.loc[: , data.columns != 'champ_name']
+x = pd.concat([x , x2] , axis = 1)
+a = pd.DataFrame()
+f = lambda x , y:1 in y.iloc[: , x].values
+f2 = lambda x , y : (y.iloc[: , x] == 1).tolist().index(True)
+for i in range(0 , len(x["gameid"]) , 10):
+    y = x.iloc[i:i+10, :]
+    for j in range(0 , len(y.columns)-3):
+        if f(j , y):
+            if y['teamid'].iloc[f2(j , y)] == 1:
+                y.iloc[: , j] = 1
+            else:
+                y.iloc[: , j] = 2
+        else:
+            continue
+    y = y.iloc[: , y.columns != 'teamid']
+    b = y.drop_duplicates(subset=None, keep='first', inplace=False)
+    a = pd.concat([a , b])
+
+query = "select win , fight.gameid , teamid , lane , winrate from fight join champion on champion.id = fight.champion join game on game.gameid = fight.gameid left join eachchamp_winrate as e on e.accountid = fight.accountid and e.champ_name = champion.champ_name where game.gameid not in(select distinct gameid from(select win , fight.gameid , teamid , lane , winrate from fight join champion on champion.id = fight.champion join game on game.gameid = fight.gameid left join eachchamp_winrate as e on e.accountid = fight.accountid and e.champ_name = champion.champ_name ) as a where a.winrate is NULL)order by gameid"
+data_w = pd.read_sql(query, conn)
+data_w.iloc[: , 0 ] = (data_w['win'] =='100').astype('int') #100 = 藍方(1) 200 = 紅方(0)
+data_w.iloc[: , 2 ] = (data_w['teamid'] =='100').astype('int')
+
+dic = {"gameid":[] , "WIN":[] , "TOP":[] , "MIDDLE":[], "ADC":[] , "SUPPORT":[] , "JUNGLE":[] , "TEAM":[] }
+data2 = pd.DataFrame(dic)
+data3 = pd.DataFrame(dic)
+
+lane = ["TOP" , "MIDDLE" , "ADC" , "SUPPORT" , "JUNGLE"]
+for i in lane:
+    winrate = data_w.query(" lane == @i & teamid == 0")
+    data2[i] = winrate.reset_index(drop = True)["winrate"]
+win = data_w.query("lane == 'MIDDLE' & teamid ==0")
+data2["WIN"] = win.reset_index(drop = True)["win"]
+data2["TEAM"] = win.reset_index(drop = True)["teamid"]
+data2["gameid"] = win.reset_index(drop = True)["gameid"]
+data2["TOTAL_WINRATE"] = data2["TOP"]+data2["MIDDLE"]+data2["ADC"]+data2["SUPPORT"]+data2["JUNGLE"]
+
+for i in lane:
+    winrate = data_w.query(" lane == @i & teamid == 1")
+    data3[i] = winrate.reset_index(drop = True)["winrate"]
+win = data_w.query("lane == 'MIDDLE' & teamid ==1")
+data3["WIN"] = win.reset_index(drop = True)["win"]
+data3["TEAM"] = win.reset_index(drop = True)["teamid"]
+data3["gameid"] = win.reset_index(drop = True)["gameid"]
+data3["TOTAL_WINRATE"] = data2["TOP"]+data2["MIDDLE"]+data2["ADC"]+data2["SUPPORT"]+data2["JUNGLE"]
+
+summ = data2.append(data3).reset_index(drop = True)
+summ = pd.merge(summ , a  , on = "gameid")
+summ2 = summ.drop(columns = ["win" , "gameid","TOP" , "MIDDLE" , "ADC" , "SUPPORT" , "JUNGLE"])
+
+att = summ2.iloc[: , summ2.columns != 'WIN']
+lab = summ2.iloc[: , summ2.columns == 'WIN']
+xtrain , xtest ,ytrain , ytest = train_test_split(att , lab , test_size = 0.3)
+#index重新排序
+for i in (xtrain , xtest ,ytrain , ytest):
+    i.index = range(i.shape[0])
+
+rfc = RandomForestClassifier( n_estimators=71, random_state=30 )
+rfc = rfc.fit(xtrain , ytrain.values.ravel())
+score  = rfc.score(xtest , ytest)
+score
+
+
+
+
+
+
+
+
+
+
+
+
+
+

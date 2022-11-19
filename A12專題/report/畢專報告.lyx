@@ -1,0 +1,6770 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage{indentfirst}
+\renewcommand{\figurename}{\bf圖}
+\renewcommand{\tablename}{\bf表}
+\renewcommand{\refname}{參考書目}
+\renewcommand{\contentsname}{\Huge目錄}
+\renewcommand{\listfigurename}{\Huge圖目錄}
+\renewcommand{\listtablename}{\Huge表目錄}
+\end_preamble
+\use_default_options true
+\maintain_unincluded_children false
+\language chinese-traditional
+\language_package default
+\inputencoding utf8-cjk
+\fontencoding global
+\font_roman "times" "cmr10"
+\font_sans "default" "default"
+\font_typewriter "default" "default"
+\font_math "auto" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\font_cjk bkai
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 12
+\spacing double
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks false
+\pdf_pdfborder false
+\pdf_colorlinks false
+\pdf_backref false
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date true
+\justification false
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\topmargin 2.5cm
+\bottommargin 2.5cm
+\headheight 29.7cm
+\footskip 1.5cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style cjk
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{empty}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\size giant
+輔仁大學資訊工程學系專題報告
+\end_layout
+
+\begin_layout Standard
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size huge
+基於蒙地卡羅樹搜尋及隨機森林模擬之英雄聯盟英雄選用推薦系統
+\end_layout
+
+\begin_layout Standard
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\align center
+
+\size larger
+406261470 資工四甲 郭峻維 406261470@gapp.fju.edu.tw
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\align center
+
+\size larger
+406261511 資工四甲 王子權 406261511@gapp.fju.edu.tw
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\align center
+
+\size larger
+406261664 資工四甲 黃彥儒 406261664@gapp.fju.edu.tw
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing single
+\align center
+
+\size larger
+406401159 資工四乙 高雋口406401159@gapp.fju.edu.tw
+\end_layout
+
+\begin_layout Standard
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\align center
+
+\size larger
+報告編號：CS109年度-PR-A12
+\end_layout
+
+\begin_layout Standard
+\paragraph_spacing onehalf
+\align center
+
+\size larger
+指導教授：廖容佐 博士
+\end_layout
+
+\begin_layout Standard
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\size largest
+中華民國 2020 年 12 月 30 日
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{plain}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{Roman}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size huge
+摘 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+要
+\end_layout
+
+\begin_layout Standard
+英雄推薦系統，是針對一款名為英雄聯盟的多人在線戰鬥競技場型遊戲其中的單雙積分模式所作的推薦系統，用意在根據許多玩家大量 的過往對戰紀錄所提供的資料，根據其特徵以
+機器學習來找出如何判斷輸贏的標準後，在積分對戰時依據隊友的資訊，使用蒙地卡羅樹搜尋來判斷選擇什麼英雄來達成最大勝率，使其提升玩家勝率。 
+\end_layout
+
+\begin_layout Standard
+本專題著重於研究個人角色的勝率以及雙方所選英雄之間的關係是否足以影響遊戲勝負，使用此程式的資料會傳會我們資料庫，紀錄使用者的使用狀況，用以判斷精準度，並致力於提
+升玩家的勝率，目標是令使用者達到更高的牌位。 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{目錄}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{圖目錄}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset FloatList figure
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{表目錄}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset FloatList table
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagestyle{plain}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+pagenumbering{arabic}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size giant
+第一章、緒論
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{第一章、緒論}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+1.1 研究動機
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{1.1 研究動機}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+描述 《英雄聯盟》
+\begin_inset CommandInset citation
+LatexCommand cite
+key "League of Legends"
+literal "false"
+
+\end_inset
+
+（英語：League of Legends，簡稱LoL）是由 Riot Games 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Riot Games"
+literal "false"
+
+\end_inset
+
+製作並且開發的 MOBA 遊戲，遊戲於2009年正式於公開平台上下載並且遊玩，遊戲至今已有10年左右的歷史，至今也是世界上遊玩人數最多的遊戲，而遊玩場數眾多，方
+法眾多，至今為止，在網路上關於英雄聯盟勝率的自動化預測相關之文章或者 App 或者其他相關之研究都非常的稀少，作為資訊工程學系的學生，決定對於英雄聯盟勝率預測以
+及選角推薦開始研究。
+\end_layout
+
+\begin_layout Section*
+1.2 專題議題
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{1.2 專題議題}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+目前積分都靠玩家自身經驗去選角以及判斷最終勝負，然而單靠自身經驗很難去做一個精準的預測，如果擁有一個可以藉由大量數據模擬選角以及預測最終勝負的程式，就能讓玩家不
+再仰賴自身經驗，而是用科學的方式去精準預測結果。
+\end_layout
+
+\begin_layout Section*
+1.3 專題挑戰性
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{1.3 專題挑戰性}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+找出一個組合對模型有最佳的勝率預判準確率，使用 MCTS 演算法進行推薦選角，需要多名玩家做長時間的實測以驗證預測的準確性，及實驗組和對照組之間的差異，隨著遊戲
+版本更新或是新英雄推出，模型資料必須要一併更新。
+\end_layout
+
+\begin_layout Section*
+1.4 專題製作目標
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{1.4 專題製作目標}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+藉由爬蟲可收集到的數據，再搭配機器學習與演算法，實作出預測勝率及推薦系統，從而脫離出玩家之間在選擇角色以及判斷勝率時，極大多數都是靠著所謂自身的感覺以及經驗來去
+思考。目標是玩家選角的時候藉著這專題所進行的推薦來去進行角色的選擇，從而顯著提升勝率。 
+\end_layout
+
+\begin_layout Section*
+1.5 專題貢獻
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{1.5 專題貢獻}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+在本次專題中，爬蟲解決了收集數據的問題，Random Forest 解決了勝率預測的問題，蒙地卡羅樹搜尋解決了英雄推薦，進而製作出英雄聯盟選用推薦系統。
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size giant
+第二章、相關研究
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{第二章、相關研究}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+counterwithin{figure}{section}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{section}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsection}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+本專題開始研究之前，網路上已經有關於英雄聯盟賽前預測的研究
+\begin_inset CommandInset citation
+LatexCommand cite
+key "League Predictor"
+literal "false"
+
+\end_inset
+
+，目的是讓玩家在遊戲開始前去分析是否跳離這場遊戲，避免輸遊戲。600場的賽前數據使用5種機器學習做模型，做分析，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖2.1}
+\end_layout
+
+\end_inset
+
+為 League Predictor 的研究結果。本專題基於這項研究，對勝率預測做類似的數據分析、驗證，並在如何提升勝率上做進一步的研究。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename league_predictor.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+League Predictor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size giant
+第三章、技術應用
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{第三章、技術應用}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{section}{3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+3.1 系統架構
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.1 系統架構}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+counterwithin{figure}{subsection}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsection}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.1.1}
+\end_layout
+
+\end_inset
+
+為系統概念圖，後端爬取資料傳至 SQL Server 儲存資料，進入選角後，前端將玩家數據傳至後端運算，將最終勝率以及推薦角色傳至前端，待遊戲結束後將遊戲結果傳
+至 SQL Server 儲存。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename systemoverview.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{figure}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+系統概念圖
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+3.1.1 前端
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{3.1.1 前端}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.1.2}
+\end_layout
+
+\end_inset
+
+為系統前端圖，使用 XAML 來設計界面以及 C# 來處理資料傳輸和介面控制，並藉由 http requests 透過 API 抓取玩家的角色數據傳至後端。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename front.jpg
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+系統前端架構圖
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+3.1.2 後端
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{3.1.1 後端}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.1.3}
+\end_layout
+
+\end_inset
+
+為系統後端圖，使用 Python 來對前端傳輸的資料進行 MCTS 20~50 秒的模擬運算以及 Random Forest 計算勝率，以及對資料庫的資料訓練模
+型。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename server.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+系統後端架構圖
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+3.2 資料收集
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.2 資料收集}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+counterwithin{figure}{subsection}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsection}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+3.2.1 對戰紀錄網
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{3.2.1 對戰紀錄網}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+在本專題中，爬過了多個有關英雄聯盟的網站，嘗試用來做數據分析，分別是：
+\end_layout
+
+\begin_layout Itemize
+Garena 對戰紀錄網
+\begin_inset CommandInset citation
+LatexCommand cite
+key "紀錄網"
+literal "false"
+
+\end_inset
+
+：這是由 Garena 開發出的對戰紀錄網，相較其他網站資訊較為完整及正確，而且內容能以 JSON 檔來查視，爬蟲速度會快上許多，程式上也較容易撰寫，因此爬對戰
+紀錄主要都以這個網站為主，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.2.1}
+\end_layout
+
+\end_inset
+
+為 Garena 對戰紀錄網的頁面。
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename garena對戰.png
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{figure}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Garena 對戰紀錄網
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+LOL戰績網
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LOL戰績網"
+literal "false"
+
+\end_inset
+
+：LOL戰績網不是官方製作的，裡頭的資料也相對比較不完整，而且每過2~3天才會更新一次，但是能夠查的到每個玩家的英雄勝率，這是別的網站沒有的資訊，因此前期爬玩家
+的勝率都是用LOL戰績網在爬。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.2.2}
+\end_layout
+
+\end_inset
+
+為LOL戰績網的頁面。
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename lol戰績往.png
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+LOL戰績網
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+OPGG
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OPGG"
+literal "false"
+
+\end_inset
+
+：OPGG 雖然沒有台服的資訊，但裡頭幫忙整理了每隻英雄的勝率以及出現的路線，還有每隻英雄對抗的資訊，這對本專題都有相對大的貢獻，因此會時常去爬裡頭的資訊來跟新
+。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.2.3}
+\end_layout
+
+\end_inset
+
+為LOL戰績網的頁面。
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename opgg.png
+	scale 30
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+OPGG
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+3.2.2 LCU API
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{3.2.2 LCU API}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+LCU (全名: League Client Update)
+\begin_inset CommandInset citation
+LatexCommand cite
+key "API"
+literal "false"
+
+\end_inset
+
+ API ，本次專題使用 League Client Update API 作為與英雄聯盟客戶端及其用戶資料庫之間的溝通橋梁，其溝通方式類似於網頁客戶端與伺服器
+端之間的資料傳輸方式，藉由其 API 文檔 League of Legends LCU Docs 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "LCU API"
+literal "false"
+
+\end_inset
+
+ 裡定義的方法， GET 所需要的用戶資料，POST 及 PUT 與應用程式作互動，完整詳細的方法請見該文檔。
+\end_layout
+
+\begin_layout Standard
+首先先介紹這個 API 的基礎網址，有了這個基礎網址才能結合上述文檔裡的方法，來實現獲取官方用戶資料庫的資料。這個網址是在開啟英雄聯盟遊戲客戶端後，會在其官方遊
+戲的 LeagueClient 資料夾自動生成 lockfile 檔案，如 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 3.2.4}
+\end_layout
+
+\end_inset
+
+，其檔案內部的資訊如 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 3.2.5}
+\end_layout
+
+\end_inset
+
+ 所示，其中 Port 跟 Https 可以構成該基礎網址如: Https://127.0.0.1:60034。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/USER/Pictures/專題報告圖片/lockfile1.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+lockfile
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/USER/Pictures/專題報告圖片/lockfile2.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+lockfile 內部資訊
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+有了基礎網址之後，就能在其後面加上 API 文檔裡定義獲取資料與互動的方法，例如: Https://127.0.0.1:60034 加上 /lol-champ-sel
+ect/v1/session 串接成 Https://127.0.0.1:60034/lol-champ-select/v1/session 就能利用
+ GET 方法訪問該方法內部的資料，其回傳的資料型別為 Json 格式，以 {} 括起來為其方法的參數，以下列出本次專題用到的方法及其說明:
+\end_layout
+
+\begin_layout Itemize
+GET /lol-gameflow/v1/gameflow-phase: 獲取當前玩家的狀態，例如: 選角中、遊戲中、排隊中...等。
+\end_layout
+
+\begin_layout Itemize
+GET /lol-champ-select/v1/session: 獲取積分選角的所有資訊，例如: 玩家選擇的角色以及其禁用的角色...等。
+\end_layout
+
+\begin_layout Itemize
+GET /lol-gameflow/v1/session: 獲取遊戲模式，例如: 積分對戰、一般對戰、咆哮深淵...等。
+\end_layout
+
+\begin_layout Itemize
+GET /lol-summoner/v1/current-summoner: 獲取玩家(本人)的資訊，例如: AccountID、SummonerID、puuI
+D...等。
+\end_layout
+
+\begin_layout Itemize
+GET /lol-summoner/v1/summoners/{id}: 獲取玩家的資訊。
+\end_layout
+
+\begin_layout Itemize
+GET /lol-ranked/v1/ranked-stats/{puuid}: 獲取玩家的賽季牌位，例如: 白金三、金牌四...等。
+\end_layout
+
+\begin_layout Itemize
+GET /lol-career-stats/v1/summoner-stats/{puuid}/10/{queue}/{position}，獲取玩家的賽季資訊，
+例如: 積分勝場、總場次...等。
+\end_layout
+
+\begin_layout Standard
+如 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 3.2.6}
+\end_layout
+
+\end_inset
+
+ 所示，這些方法也可以透過瀏覽器來獲取資料，但要訪問該資源之前必須要先認證是否為該資源的存取者，如 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 3.2.7}
+\end_layout
+
+\end_inset
+
+ ，而認證所需的資訊在 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 3.2.5}
+\end_layout
+
+\end_inset
+
+ 呈現。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/USER/Pictures/專題報告圖片/API 3.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+透過瀏覽器訪問資源
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/USER/Pictures/專題報告圖片/API 4.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+認證提示
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.2.8}
+\end_layout
+
+\end_inset
+
+為本專題收集並整理出的60萬筆資料。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 60w.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+爬蟲
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+3.3 蒙地卡羅樹搜尋
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.3 蒙地卡羅樹搜尋}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsection}{3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+蒙地卡羅樹搜尋
+\begin_inset CommandInset citation
+LatexCommand cite
+key "MCTS"
+literal "false"
+
+\end_inset
+
+ ( Monte Carlo tree search ) 簡稱為 MCTS ，是一種應用在人工智慧中，用來做出最佳決策的搜尋演算法，最常使用在各類遊戲裡，例如各
+類棋盤遊戲或是撲克牌賭博遊戲，常常被拿來使用在擁有不確定性的遊戲，最早的歷史可以追溯至20世紀末，使用在井字棋、黑白棋和西洋棋等等遊戲，但是並未獲得重視，後來蒙
+地卡羅樹搜尋應用在圍棋上並且戰勝了許多實力強勁的業餘棋手，才開始逐漸受到重視。如今，最有名的應用是在一個名為 AlphaGo 的人工智慧圍棋軟體上，結合了多個深
+度神經網路，通過龐大的計算來模擬大量棋盤選點，以及和自己對弈大量棋局來自我學習，達成世界頂尖水平的棋士。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.3.1}
+\end_layout
+
+\end_inset
+
+展示 MCTS 大致可分為兩大部分，分別是 Tree Traversal 以及 Optimal Decision。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename OVERVIEW.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{figure}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+MCTS Overview
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+本專題也嘗試利用了蒙地卡羅樹搜尋來製作英雄推薦系統，雖然有相當嚴謹的時間限制，但還是希望能夠在尋找最佳決策有不錯的表現。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.3.2}
+\end_layout
+
+\end_inset
+
+顯示了在英雄聯盟進選角模式後，開始預選階段15秒，在這階段爬取我方5名玩家在單賽季中使用英雄的單條路線勝率，再來進入禁用英雄階段30秒，在這階段把資料傳送至後端
+並進行數據處理，接下來玩家開始選擇英雄，每位玩家有30秒的時間，順序隊伍為 (藍、紅、藍、紅、藍、紅)，頭尾的紅藍是一位玩家，其他則為兩位一起選，兩隊總共10名
+玩家，在這階段，MCTS 的開始時間根據使用者是處在哪個選擇順序進行調配，在選角結束前10秒 MCTS 計算出最佳的決策提供玩家做選擇，最後進遊戲前有30秒最終
+準備階段，使用模型計算出我方最終勝率。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename MCTS_FLOW.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+選角流程
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.3.2}
+\end_layout
+
+\end_inset
+
+為嘗試過的兩種蒙地卡羅樹搜尋方法，第一種為我方與敵方動作交叉執行，第二種為只執行我方動作，最後本專題以第2種方式為主，原因如下。
+\end_layout
+
+\begin_layout Standard
+經過多次觀察，玩家在各個位置下可跑的蒙地卡羅樹搜尋時間最多為50秒(敵方30秒+我方20秒)，剩餘10秒給予玩家做選擇，但是能執行到極限50秒的機會比較少，每次
+使用能模擬的次數介於2000~3000之間，如果是使用第一種方法，在執行到敵方層時，因為無法知道敵方會使用的英雄，節點會有152個之多，消耗太多時間在該層導致整
+棵樹的深度不夠而無法執行我方玩家，效果會大幅下降，第二種方法的每一層代表我方玩家，只會有數10個動作，執行的效果會比第一種好很多，我方玩家都能夠順利展開完。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename mcts_2.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+蒙地卡羅樹搜尋兩種方法
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+3.3.1 Selection
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{3.3.1 Selection}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+蒙地卡羅樹搜尋分為4個步驟， Selection、 Expansion、 Simulation 以及 Backpropagation ，4個步驟不斷重複執行，最
+終從蒙地卡羅樹選擇出最佳決策。
+\end_layout
+
+\begin_layout Standard
+Selection，從根節點往下找，直到最底下的葉子節點，選擇公式為UCT演算法，在不重複探索和探索高勝率之間做出平衡，公式如下：
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{Win}{N}+C_{param}\times\sqrt{\frac{\log(Visit)}{N}}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\begin_inset Formula $Win$
+\end_inset
+
+代表在該節點模擬勝利的次數
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+，因為紅方勝利為0，藍方勝利為1，因此如果玩家為紅方的話必須要 
+\begin_inset Formula $1-\frac{Win}{N}$
+\end_inset
+
+ 。
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $N$
+\end_inset
+
+代表在該節點模擬次數。
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $C_{param}$
+\end_inset
+
+代表探索參數，通常數值為
+\begin_inset Formula $\sqrt{2}\sim2$
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $Visit$
+\end_inset
+
+代表總模擬次數，也就是該層所有
+\begin_inset Formula $N$
+\end_inset
+
+的和。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.3.3}
+\end_layout
+
+\end_inset
+
+顯示了 Selection 的移動模式，每個節點代表著一隻英雄，不同層代表不同玩家的選擇回合，兩個數字分別是模擬贏的次數以及該節點模擬次數。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename selection.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Selection
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+3.3.2 Expansion
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{3.3.2 Expansion}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+第二個步驟為 Expansion，當 Selection 到某一個葉子節點時，先檢查下一層的動作有沒有全部被擴充完，如果沒有的話，則在下層建立一個尚未被擴充的新
+動作並指向該節點。 如果節點後已經沒有動作可執行了(第6層)，不執行 Expansion 直接跳下一個步驟，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.3.4}
+\end_layout
+
+\end_inset
+
+顯示了 Expansion 的移動模式。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename expansion.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Expansion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+3.3.3 Simulation
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{3.3.3 Simulation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+第三步驟為 Simulation，從 Expansion 的節點進行模擬遊戲，隨機後幾層的節點並利用訓練好的 Random Forest 模型進行遊戲。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.3.5}
+\end_layout
+
+\end_inset
+
+顯示了 Simulation 的模式。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename simulate.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Simulation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+3.3.4 Backpropagation
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{3.3.4 Backpropagation}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+最後一個步驟為 Backpropagation，將 Simulation 完的結果從該節點更新至根節點，藍方獲勝節點更新1/1，紅方獲勝節點更新0/1。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.3.6}
+\end_layout
+
+\end_inset
+
+顯示了 Backpropagation 的移動模式。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename backprogation.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Backpropagation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+3.4 操作介面
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.4 操作介面}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsection}{4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 4.1.png
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{figure}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+設定路徑首頁
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.4.1}
+\end_layout
+
+\end_inset
+
+為一開始LeagueClient之路徑設定，操作流程如圖上所標示之文字。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 4.2.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+錯誤訊息
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+若路徑錯誤或尚未開啟英雄聯盟，會跳出
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.4.2}
+\end_layout
+
+\end_inset
+
+此訊息，按確定後重新設置。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 4.3.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+正確訊息
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+若路徑正確且已開啟英雄聯盟，會跳出
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.4.3}
+\end_layout
+
+\end_inset
+
+此訊息，按確定後進入英雄推薦程式。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 4.4.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+主要頁面
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.4.4}
+\end_layout
+
+\end_inset
+
+為英雄推薦程式介面原始圖，左邊設置五位召喚師欄位，右邊設置的英雄、玩家、常用路線。當開始選角時，如下圖所示。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 4.5.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+進遊戲後頁面
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+當進入選角階段後，程式左邊會顯示我方隊伍是紅或藍方、以及五位召喚師的名字、牌位，右邊的英雄欄位會標示玩家選擇在單雙積分選擇此英雄的場次以及勝率，玩家欄位會顯示此
+召喚師在S10賽季所玩的單雙積分總場數以及總勝率，常用路先會顯示此玩家最常單雙積分中使用的路線，如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.4.5}
+\end_layout
+
+\end_inset
+
+。。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 4.6.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+計算最佳決策頁面
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+選角順序由上而下，當輪到自己選角時，前面會先顯示計算中，如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.4.6}
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 4.7.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+推薦英雄頁面
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+選角時間總共30秒，等到約剩10秒時會顯示由伺服器傳來的英雄推薦，如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.4.7}
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 4.8.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+計算勝率頁面
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+當雙方選角完畢後傳回伺服器分析勝率，如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.4.8}
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 4.9.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+顯示勝率頁面
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+最後顯示敵我雙方這場的勝率，如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖3.4.9}
+\end_layout
+
+\end_inset
+
+。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size giant
+第四章、系統實作結果
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{第四章、系統實作結果}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{section}{4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+4.1 Random Forest 與各模型訓練結果
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.1 Random Forest 與各模型訓練結果}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsection}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Random Forest 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Random Forest"
+literal "false"
+
+\end_inset
+
+簡單來說就是 Decision Tree 的集合形成一片森林，每一棵樹都是獨立的，最後再經過每一棵樹進行投票，以多數決的方式決定結果，而 Random
+ Forest 採用的隨機方法為 Bagging，每次從 Training Data 取出訓練完的樣本會放回去母體，取出的過程是均勻且可以重複取樣，因此訓練出來
+的每一棵樹的樣本有機會部分資料重複，不過樹之間還是具有差異性。影響 Random Forest 最大的是樹木的數量，也就是模型評估器的數量，通常來說，數量越大，
+模型的效果往往越好，但是任何的模型都會有決策邊界，當達到一定程度時，效果就不會再上升，而且需要的計算時間也會相對的變多，因次必須在這兩者之間取得一個平衡。
+\end_layout
+
+\begin_layout Subsection*
+4.1.1 Champion
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{4.1.1 Champion}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+英雄聯盟中一場遊戲會有10隻不同的英雄，本專題一開始朝這個方向來研究。
+\end_layout
+
+\begin_layout Standard
+One hot encoding 是一種編碼方式，目的是為了要將一串文字轉換成數字，讓程式去更好理解與運算，因為大部分的模型都是基於數學運算，如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖4.1.1}
+\end_layout
+
+\end_inset
+
+，左邊是 Label Encoding，只有一個特徵，裡頭的數字是英雄聯盟裡每個英雄的 ID，它是屬於類別資料，兩者之間沒有大小之分，因此模型會產生一個問題，認
+為他們之間存在74<103<555，所以必須轉換成 One hot encoding，將類別拆成多個特徵，如右圖每個列中的數值以0、1、2代替，如果某列的資料存
+在著該特徵(英雄)並且屬於藍方，顯示1，紅方則顯示2，反則顯示0。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename labeltoonehot.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{figure}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Label Encoding與One Hot Encoding
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖4.1.2}
+\end_layout
+
+\end_inset
+
+為用來訓練的 Label，也就是贏方，1是藍方獲勝，0則為紅方獲勝。Attribute 則是利用 One hot encoding 編碼的英雄。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename LABEL.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Label
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+4.1.2 Win Rate
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{4.1.2 Win Rate}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+考慮到個人的因素，也就是跟英雄的勝率息息相關，本專題考慮以及測試過很多種勝率，分別是：
+\end_layout
+
+\begin_layout Itemize
+賽季全玩家總勝率：資料來自 OPGG，統計了全玩家在每隻英雄上的勝率。
+\end_layout
+
+\begin_layout Itemize
+單個玩家賽季總勝率：單名玩家在本賽季的總勝率，不管使用任何英雄。
+\end_layout
+
+\begin_layout Itemize
+玩家個人勝率：單名玩家使用各英雄在本賽季的勝率，不管在任何路線。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖4.1.3}
+\end_layout
+
+\end_inset
+
+為減少特徵數量的變化，原先為五條路線各別紀錄勝率，後來修改成將五條路線加總起來變成一個總勝率，因為英雄聯盟在進選角過程中只看的到自己隊伍的玩家，因此在這裡的勝率
+都是只計算我方的。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename winrate_cham.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+特徵變化
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+4.1.3 訓練結果
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{4.1.3 訓練結果}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+除了 Random Forest 之外，也嘗試了使用其他機器學習來製作模型，如 MLP 多層類神經網路以及 KNN。 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{表4.1.1}
+\end_layout
+
+\end_inset
+
+為使用各種不同變化的 Attribute 訓練出模型的準確度比較圖，純英雄以及全玩家的勝率的結果都相當差，只有55%左右，由此可知英雄以及全玩家勝率不是非常有用
+的數據，當使用到個人的勝率時，Random Forest 和 KNN 模型可以達到 80% 以上，MLP 有稍顯提升至 68% ，由此可知個人的勝率對最終獲勝方
+有很大的影響，而 Random Forest 的表現上比 KNN 以及 MLP 都來的好些，最高可達92 %，因此本專題著重在 Random Forest
+ 模型來製作英雄推薦系統。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+counterwithin{table}{subsection}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{table}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+模型總結
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename ml.png
+	scale 47
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{表4.1.2}
+\end_layout
+
+\end_inset
+
+為各特徵組合，包括了Champion(0、1藍、2紅方)、Team(0紅、1藍方)、各路線(Top、Jungle、Middle、ADC、Support)Win
+ Rate、Total Win Rate 等等。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Attibute
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename attribute.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+4.1.4 驗證
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsubsection}{4.1.4 驗證}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+鑑別一個模型好與壞，精確度是一個好的方法，但還是需要一些指標來判定模型的好壞，本專題用了一個指標稱為 Confusion Matrix
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Confusion Matrix"
+literal "false"
+
+\end_inset
+
+，專門用來衡量一個分類模型。 Confusion Matrix 分為四個元素，分別是：
+\end_layout
+
+\begin_layout Itemize
+TP(True Positive)：正確的預測了正樣本，例如實際紅方獲勝模型也預測了紅方。
+\end_layout
+
+\begin_layout Itemize
+TN(True Negative)：正確的預測了負樣本，例如實際藍方獲勝模型也預測了藍方。
+\end_layout
+
+\begin_layout Itemize
+FP(False Positive)：將負樣本預測成正樣本，例如實際藍方獲勝但模型預測了紅方。
+\end_layout
+
+\begin_layout Itemize
+FN(False Negative)：將正樣本預測成負樣本，例如實際紅方獲勝但模型預測了藍方。
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{表4.1.3}
+\end_layout
+
+\end_inset
+
+為 Confusion Matrix ，4個數字代表了 勝率加總+雙邊英雄 Random Forest 這個模型在測試集的表現狀況。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Confusion Matrix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename CONFUSION.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+由 Confusion Matrix 這四個元素值又可以衍伸出一些指標來評估一個模型的好壞，分別是：
+\end_layout
+
+\begin_layout Itemize
+Precision(準確率)：Precision 指標為在模型預測為紅/藍方獲勝中，實際上為紅/藍方獲勝的機率，這項指標很重要因為希望模型可以在每次預測都是正確
+的。
+\begin_inset Formula 
+\[
+Precision=\frac{TP}{TP+FP}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Recall(召回率)：Recall 指標為在所有實際紅/藍方獲勝樣本當中，模型能夠確實預測紅/ 藍方獲勝的機率，跟Precsion類似只是看的角度不同，也就是
+希望模型在紅藍方預測上可以平衡，不希望偏袒哪一方。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+Recall=\frac{TP}{TP+FN}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+F1-Score：F1-Score 指標為用來調和 Precision 和 Recall 的平均值，如果兩個指標都相同重要的話，就會從F1-Score來做觀測。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+F1-Score=\frac{2\times Precision\times Recall}{Precision+Recall}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{表4.1.4}
+\end_layout
+
+\end_inset
+
+顯示了各指標在 勝率加總+雙邊英雄 Random Forest 這個模型的紅/ 藍方預測表現。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Precision、Recall以及F1-Score
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename recall.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+4.2 推薦英雄實驗結果
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{4.2 推薦英雄實驗結果}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsection}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+由於推薦時間有限，伺服器運算量越大越好，但礙於設備上的限制無法進行大量的運算，因此在 MCTS 中捨棄對面的運算，專注於我方的英雄推薦。玩家玩過的角色越多，推薦
+的範圍也越廣，可以在 MCTS 推薦結果以及此版本中的強勢角色中做參考，至於是否能夠真正提升玩家總勝率，由於專題結束時正逢版本大改，種種不利的因素造成蒐集的場次
+不足，因此必須等到這個賽季的積分遊戲場次夠多，玩家開發出多種的玩法並且適應版本之後，重新爬取新場次數據，才能做長期測試，而MCTS 基於 Random
+ Forest 計算出的結果，不考慮敵方玩家的角色勝率，所以敵方普遍被視為強的一方，因此在玩家選擇最佳英雄後，不是都能將最終遊戲勝率提高至獲勝方，其他4位玩家的
+選擇也會造成很大的影響。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{表4.2.1}
+\end_layout
+
+\end_inset
+
+顯示了季前測試25場遊戲，Random Forest 模型準確率大約在60%左右，跟理想結果差有點多，原因在於遊戲中的變數非常大，5位玩家當下的狀態還是佔了勝敗
+很大的因素。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{table}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test Confusion Matrix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename test_confu.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{表4.2.2}
+\end_layout
+
+\end_inset
+
+分析了 4 位玩家使用前6場與使用後6場的勝率，2 位玩家前後勝率小幅提升，1 位玩家勝率降低，1 位玩家沒有變化，而玩家勝率降低原因在於該玩家使用前的勝率較低
+且不常遊玩，導致最終勝率預判都偏低。本專題較適用於平時有在遊玩，角色池廣的玩家。 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+使用前後勝率
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename f_test.png
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+
+\series bold
+\size giant
+第五章、心得及未來展望
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{第五章、心得及未來展望}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{section}{5}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+5.1 心得
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{5.1 心得}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{subsection}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+這一次的專題從前期，使用 Python 來爬取所有裝備資訊，圖片，各英雄的資訊，召喚師技能，符文，爬了無數玩家對戰紀錄，蒐集了上萬的場次，光是如此也耗費了一個多
+月，接著就是後端上的 MCTS 也經過了無數次的修正，隨著各版本更動都會做微調，另外就是在演算過程中，也從看兩邊雙方的資訊，在發現到預測的準確率並沒有差距太大的
+情況之下，縮減成只看己方的資訊，從而減少了一半以上的運算長度，接著前端在最開始本來是以手動選擇雙邊角色，後續也因為方便性，以及需要計算時間等等的問題，也優化成了
+現在的可以直接抓取遊戲後端的數據來去連接上前端，即時性的抓取資訊，從而增加方便性跟準確程度，缺點上只有，倘若沒有開著遊戲的話，就無法開啟專題來操作，再來就是一旦
+遊戲 Server 端出現崩潰或者卡頓的話，專題也會整個卡住無法運作，除非重新開啟專題，另外在前端抓取資料的 Debug ，也必須使用真實的帳號來去測試，在
+ Debug 上也非常辛苦，所有組員能夠用的帳號也都是通通都做下去測試過，也都有吃上了等待處罰。
+\end_layout
+
+\begin_layout Section*
+5.2 未來展望
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{5.2 未來展望}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+遊戲中如果發生換路或是幫隊友選角色，在推薦選角以及勝率預判會發生問題，因為 MCTS 的計算時間有限制，會在未來思考如何能夠提升運算的速度以及平行化運算，等到推
+薦系統更穩定後，找尋更多玩家做使用，並分析系統對遊戲積分的勝率是否增加。將專題推廣到五位玩家同時進行最佳英雄推薦，以提高最終勝率。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{參考資料}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "League of Legends"
+literal "false"
+
+\end_inset
+
+LOL , [線上].
+ Available : 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://na.leagueoflegends.com/en-us/news/riot-games/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Riot Games"
+literal "false"
+
+\end_inset
+
+Riot Games , [線上].
+ Available : 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.riotgames.com/zh-cn"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "League Predictor"
+literal "false"
+
+\end_inset
+
+ League Predictor , [線上].
+ Available : 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://thomasythuang.github.io/League-Predictor/#dataset"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "python"
+literal "false"
+
+\end_inset
+
+ python , [線上].
+ Available : 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.python.org/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Anaconda"
+literal "false"
+
+\end_inset
+
+ Anaconda , [線上].
+ Available : 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.anaconda.com/products/individual"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "XAML"
+literal "false"
+
+\end_inset
+
+ XAML, [線上].
+ Available : 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://zh.wikipedia.org/wiki/XAML"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Microsoft SQL Server"
+literal "false"
+
+\end_inset
+
+SQL Server, [線上].
+ Available : 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.microsoft.com/zh-tw/sql-server/sql-server-downloads"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "紀錄網"
+literal "false"
+
+\end_inset
+
+紀錄網, [線上].
+ Available : 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://matchhistory.tw.leagueoflegends.com/zh/#page/landing-page"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "LOL戰績網"
+literal "false"
+
+\end_inset
+
+LOL戰績網, [線上].
+ Available : 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://lol.moa.tw/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "OPGG"
+literal "false"
+
+\end_inset
+
+OPGG, [線上].
+ Available : 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.op.gg/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "API"
+literal "false"
+
+\end_inset
+
+ API, [線上].
+ Available : 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://reurl.cc/R1GR09"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "LCU API"
+literal "false"
+
+\end_inset
+
+ 英雄聯盟 LCU API 文檔, [線上].
+ Available : 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://lcu.vivide.re/"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "C#"
+literal "false"
+
+\end_inset
+
+ C#, [線上].
+ Available : 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://zh.wikipedia.org/wiki/C%E2%99%AF"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Random Forest"
+literal "false"
+
+\end_inset
+
+LEO BREIMAN(2001) , Random Forest , Statistics Department, University of
+ California
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "Confusion Matrix"
+literal "false"
+
+\end_inset
+
+Confusion Matrix, [線上].
+ Available : 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/Confusion_matrix"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Bibliography
+\begin_inset CommandInset bibitem
+LatexCommand bibitem
+key "MCTS"
+literal "false"
+
+\end_inset
+
+C.
+ B.
+ Browne et al., "A Survey of Monte Carlo Tree Search Methods," in IEEE Transactio
+ns on Computational Intelligence and AI in Games
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{附錄}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Part*
+Appendix 附錄
+\end_layout
+
+\begin_layout Section*
+
+\family roman
+1 
+\family default
+Python
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+counterwithin{figure}{section}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+counterwithin{table}{section}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{1.Python}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{section}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Python
+\begin_inset CommandInset citation
+LatexCommand cite
+key "python"
+literal "false"
+
+\end_inset
+
+為一套強大且易於學習的程式語言，它擁有以下特點：
+\end_layout
+
+\begin_layout Itemize
+廣大函示庫：Python 可直接調用許多 library，從數學運算、數據分析、機器學習到各式網路協定連線，包含的範圍非常的廣大。
+\end_layout
+
+\begin_layout Itemize
+容易撰寫：Python 的結構清楚明瞭，且物件導向的特性相較下其他程式語言靈活許多，功能性十足。
+\end_layout
+
+\begin_layout Itemize
+跨平台：Python 支援多個作業系統，Linux、Windows 等等平台。
+\end_layout
+
+\begin_layout Itemize
+資源豐富：Python 是個廣大的程式語言，網路上有相當多資源可參考。
+\end_layout
+
+\begin_layout Standard
+由於以上的原因，本專題後端使用 Python 作為主要語言，使用版本為3.7.4，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖1.1}
+\end_layout
+
+\end_inset
+
+為 Python 的商標圖，並使用 Anaconda 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Anaconda"
+literal "false"
+
+\end_inset
+
+ 作為虛擬環境管理系統，使用版本為4.8.3，
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖1.2}
+\end_layout
+
+\end_inset
+
+為 Anaconda 的商標圖。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename python.jpg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{figure}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Python
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+
+\emph on
+\begin_inset Graphics
+	filename 0_YrAVTYKFQ5mRyyaV.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "Anaconda"
+
+\end_inset
+
+Anaconda
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\family roman
+1.1 Requests
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{1.1 Requests}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Requests 為 Python 的函示庫模組，用來對 HTTP 發出請求，並可從網頁伺服器取得狀態碼或網頁原始碼，分為 GET 請求以及 POST
+ 請求。另外，本專題常遇到需要帳號與密碼登入才能看的網頁，必須使用 auth 參數來指定帳號密碼，以及關閉 Requests 的憑證檢查功能，否則容易發生錯誤。
+如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖1.3}
+\end_layout
+
+\end_inset
+
+所示，先給定帳號及密碼，改動 verify 參數才可獲得網頁正常回應。
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename request.png
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+requests使用方法
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\family roman
+1.2 BeautifulSoup
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{1.2 BeautifulSoup}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+BeautifulSoup 為 Python 的函示庫模組，用來解析 HTML，能夠利用強大的屬性和方法快速取得網頁資料，加以分析特定的目標。如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖1.4}
+\end_layout
+
+\end_inset
+
+所示，首先利用 requests 去get https://lol.moa.tw/summoner/show/tim%E7%A5%9E%E4%BA%BA
+ 這個網址，再利用 BeautifulSoup 指定 html.parser 作為解析器轉換為物件，最後可用 find 或 find_all 找尋符合標籤的內容。
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename request_code.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+BeautifulSoup使用方法
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\family roman
+1.3 Pandas
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{1.3 Pandas}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pandas 是一個數據分析的模組，可以使用高效能且方便使用的資料格式 (DataFrame) ，處理結構化的資料，例如 CSV、JSON 或關聯式資料庫，並且
+在做機器學習時是不可或缺的工具之一，在數據的讀取、切片、轉換上靈活性十足，輕鬆去清理以及整理，取得想要關注的數據。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖1.5}
+\end_layout
+
+\end_inset
+
+為 DataFrame 資料格式，行列分明。
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename pandas.png
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+DataFrame格式
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\family roman
+1.4 Scikit-Learn
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{1.4 Scikit-Learn}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\family roman
+Scikit-Learn
+\family default
+ 是一套基於 Python 的機器學習模組，它透過 NumPy, Pandas 和 Matplotlib 等函示包來完成些高應用的運算，並且涵蓋了幾乎所有主流機
+器學習算法，包括各種分類、回歸和聚類算法，對本專題達應用出不錯的成效。
+\end_layout
+
+\begin_layout Section*
+2 C#
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{2.C sharp}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{section}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+C# 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "C#"
+literal "false"
+
+\end_inset
+
+ 是微軟推出的一種基於.NET框架的、物件導向的進階程式語言。有著 C 和 C++ 部分通用寫法同時又將較複雜的語法去除，讓程式在開發的過程中較不會因語法限制開發
+者的開發速度，而對於複雜度較高的物件導向程式設計，有著更精簡的語法降低開發者對於同一個方法所需撰寫的程式碼行數。是本次前端介面變化及功能設計所使用的程式語言，以
+下將介紹幾個在專題扮演重要角色的方法及類別。
+\end_layout
+
+\begin_layout Subsection*
+2.1 HttpClient
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.1 HttpClient}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+這個類別位於命名空間 System.Net.Http，主要目的是取得客戶端從伺服器端請求的資料，而這些資料會使用在前端的介面變化及後端的模擬運算。但如果要取得資料還
+必須做出幾個基礎設定，如 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 2.1}
+\end_layout
+
+\end_inset
+
+ 所示:
+\end_layout
+
+\begin_layout Itemize
+BaseAddress: 用來設定基礎網址，可以避免在串接不同的資料網址時，要不斷輸入這段基礎網址，如: https://127.0.0.1:{Port}。
+\end_layout
+
+\begin_layout Itemize
+DefaultRequestHeaders: 某些網站需要要求 Header 來取得授權帳密及傳輸過程所使用的資料格式時，就需要設定此項，否則無法接收及送出資料
+，如 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 3.2.7}
+\end_layout
+
+\end_inset
+
+ 要求使用者輸入認證帳號及密碼。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/USER/Pictures/專題報告圖片/HttpClient.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{figure}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align left
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+HttpClent 基礎設定
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+除了這些基礎設定，還必須使用 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 3.2.5}
+\end_layout
+
+\end_inset
+
+ 的認證帳密進行 Base64 的編碼才能夠通過驗證，如 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 2.2}
+\end_layout
+
+\end_inset
+
+ 所示，進行 Base64的編碼驗證，以及傳輸資料的格式為 Json。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/USER/Pictures/專題報告圖片/HttpClient2.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Base64 驗證及資料格式
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+經由上述設定的過程後，就能夠正確的傳輸資料，如 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 2.3}
+\end_layout
+
+\end_inset
+
+ 所示，藉由非同步接收取得特定資料網址的資料。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/USER/Pictures/專題報告圖片/HttpClient3.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+HttpClient 取得資料
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+2.2 Task
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.2 Task}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+這個類別位於命名空間 System.Threading.Tasks，主要目的是對於前端介面進行非同步工作，把單一執行緒的工作拆成多執行緒的工作，避免使用者介面與資料
+抓取的工作進行同步作業，導致前端介面如同當機一般。而在專題中將工作拆成三部份分別是，使用者介面、從客戶端資料庫取得資料與介面變化、前後端傳輸資料與介面呈現，其中
+使用者介面是默認的第一個執行緒，所以不必將其拆到其他線程工作，需要拆成其他執行緒的只有從客戶端資料庫取得資料與介面變化及前後端傳輸資料與介面呈現這兩部份，其寫法
+如 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 2.4}
+\end_layout
+
+\end_inset
+
+ 所示，將其要進行非同步的方法當做參數寫入 Task.Run() 就能將這個方法放入到另一個執行緒進行非同步工作。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/USER/Pictures/專題報告圖片/Task.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Task 寫法
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+2.3 Dispatcher
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{2.3 Dispatcher}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+這個類別位於命名空間 System.Windows.Threading，主要用於允許介面上的控制項、容器在不同執行緒中使用，是前端在不同執行緒中控制介面變化的重要類
+別，而默認狀態下的控制項及容器位於使用者介面這個執行緒，如果今天要在另一個執行緒中進行 UI 的更新，就必須對在某一執行緒中正在使用的控制項或容器暫時停止工作，
+並搬運到另一個執行緒做使用，而 Dispatcher 類別藉由其方法 BeginInvoke() 進行不同執行緒的搬運就能達到上述的作法，如 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 2.5}
+\end_layout
+
+\end_inset
+
+ 所示，其所需的參數包含 Delegate 類型的方法以及物件型別的陣列參數。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/USER/Pictures/專題報告圖片/Dispatcher1.PNG
+	lyxscale 90
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+BeginInvoke 方法
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Delegate 扮演委派的角色，將需要被 Dispatcher 搬運到另一個執行緒做更新的控制項或容器先寫入用來更新的方法，再將方法當作參數寫入
+ Delegate 後，Dispatcher 就會將這些控制項或容器及其操作方法實現於另一個執行緒中。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 2.6}
+\end_layout
+
+\end_inset
+
+ 為 Delegate 方法名稱宣告及 MessageBox 控制項做呈現的操作方法。 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 2.7}
+\end_layout
+
+\end_inset
+
+ 為 Dispatcher 搬運委派方法的寫法，首先將 MessgaeBox 控制項寫入 Show_MessageBox 操作方法後，再將 Show_Messa
+geBox 方法當作參數寫入 Delegate，其委派的方法經由 Dispactcher 搬運到需要用到此方法的執行緒做呈現。 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/USER/Pictures/專題報告圖片/Dispatcher2.PNG
+	lyxscale 90
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Delegate 及委派的方法
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/USER/Pictures/專題報告圖片/Dispatcher3.PNG
+	lyxscale 75
+	scale 75
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dispatcher 寫法
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+3 XAML
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{3.XAML}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{section}{3}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+XAML 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "XAML"
+literal "false"
+
+\end_inset
+
+ (全名 : Extensible Application Markup Language)，是微軟開發的一種基於 XML、基於聲明，用於初始化結構化值和物件的
+使用者介面描述語言，有著 HTML 的外觀及 XML 的語法和強大的物件屬性及事件設置，使得設計介面上較為快速，是本次前端用來設計界面的主要語言。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 3.1}
+\end_layout
+
+\end_inset
+
+ 呈現 XAML 類似於 HTML 的外觀及 XML 的語法，以及對單一控制項屬性及事件快速設定的功能。
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/USER/Pictures/專題報告圖片/XAML.PNG
+	lyxscale 65
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{figure}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+XAML 外觀
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+
+\family roman
+3.1 Grid
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.1 Grid}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+在本次專題設計前端的頁面中，最常用的割線容器莫過於 Grid ，因為前端是使用者對於軟體的第一印象，而 Grid 這個切割容器可以將版面切割成設計者需要的面板，
+同時又能著重整齊，如 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 3.2}
+\end_layout
+
+\end_inset
+
+ 所示， Grid 這個切割容器經由 Grid.RowDefinitions 的設定後，將一個視窗切割成上下兩個經設計者自行設定高度的視窗，並使這兩個視窗彼此能夠
+相互對齊，對於前端整體介面的設計上更加美觀且整齊，亦不會有版面很亂的現象。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/USER/Pictures/專題報告圖片/Grid1.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Grid 切割設定
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+3.2 StackPanel
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.2 StackPanel}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+經由 Grid 的割線布局後，再來就是如何把控制項放入指定的布局位置以及對齊，控制項包括 button、TextBlock、Label、Image，而能做到對這
+些控制項對齊的就只有 StackPanel。如 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 3.3}
+\end_layout
+
+\end_inset
+
+ 所示，StackPanel 是一個藉由堆疊控制項來間接實現對齊的堆疊容器，而專題前端控制項的使用量大，如要一一對齊肯定要花上大量的時間設定位置，因此必須仰賴
+ StackPanel 對控制項的堆疊才能整齊且快速的放入 Grid 切割出來的布局中。如 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 3.4}
+\end_layout
+
+\end_inset
+
+ 所示，經由將三個 TextBlock 控制項放入 StackPanel 後藉由堆疊就可以使得這三行文字對齊，而不用再另外設定位置來迫使控制項彼此對齊。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/USER/Pictures/專題報告圖片/StackPanel.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+StackPanel
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/USER/Pictures/專題報告圖片/VStackPanel.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+StackPanel 堆疊排版
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+3.3 DialogHost
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{3.3 DialogHost}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+本次專題的最大目的就是要建立一個與使用者互動的介面，而這個介面必須要即時跳出指定的訊息，所以這一部分就使用 DialogHost 來呈現。如 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 3.5}
+\end_layout
+
+\end_inset
+
+ 所示，DialogHost 是基於別人寫好的模板裡的一個互動式介面，其中 materialDesign 就是模板名稱，而這個介面再經由設計者自行設計界面，如使
+用 Grid 來切割布局，再用 StackPanel 進行控制項的配置，就能構成一個要即時呈現給使用者觀看的對話視窗，如 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖 3.6}
+\end_layout
+
+\end_inset
+
+ 所示，利用這個視窗即時推薦給使用者這個場次上最佳的英雄供其選擇。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/USER/Pictures/專題報告圖片/DialogHost.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+DialogHost
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename C:/Users/USER/Pictures/專題報告圖片/Recommend.PNG
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+DialogHost 推薦視窗
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+
+\family roman
+4 Socket
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{4.Socket}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{section}{4}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+本專題程序間以及前後端的通訊是利用 Socket 來進行，是支援 TCP/IP 協議的網路通訊基本單元，Socket 可以在日常生活中常常遇到，大部分的服務都是
+基於 Socket 來完成的，例如瀏覽網頁或發收 email 等等。
+\end_layout
+
+\begin_layout Standard
+Python 中 Socket 模組能夠自己選擇需要的資料傳輸協議以及IP地址引數，並且設定好 Server 端需監聽的 IP 跟 Port，即可建立好一個基本
+的 SocketServer 初始設定。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{表4.1}
+\end_layout
+
+\end_inset
+
+以及
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{表4.2}
+\end_layout
+
+\end_inset
+
+分別表示了 Socket 模組中經常使用到的 Socket Address 和 Protocal 它們的作用以及優缺點，而本次專題使用的為 AF_INET
+ 以及 SOCK_STREAM，如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖4.1}
+\end_layout
+
+\end_inset
+
+，socket() 中的兩個參數指明了連接需要的IP地址類型和傳輸協定，而 bind() 用來將 socket 對象和特定的 IP 和 Port
+ 進行關聯。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename socket_code.png
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{figure}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Socket用法
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Socket Address
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 表1.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Socket Protocal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename 表2.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖4.2}
+\end_layout
+
+\end_inset
+
+為 Socket 的簡易架構圖，伺服器端一直維持在 Listen 狀態，允許其他對象接受 Socket 的連接，直到有新的對象連接時，客戶端會回傳串接對象以及I
+P位址連線資訊，接下來 TCP_Socket 就可以利用這段串接來傳送資料或接收資料，結束流程後通過 close 來關閉本次連接，並且釋放資源，而伺服器端會繼續
+等待其他的連接。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename client.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Socket架構
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Socket 的傳送格式為 Bytes，但在做測試的時候發現如果每次都用 Bytes 來傳送訊息的話，傳送到伺服器端的資料容易發生黏包，原因在於接收方不知道一次
+要提取多少 Bytes，傳送資料時間間格過短，造成伺服器端只收到了一小部分，而下次再收的時候會從緩衝區提取上次遺留的資料，發生黏包。解決方法為一次把要傳送的資料
+寫入資料串流中 (StreamWriter) 中，接著刷新緩衝將資料傳到伺服器接收端，最後將程式暫停。如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖4.3}
+\end_layout
+
+\end_inset
+
+所示，將要傳送的資料一個個寫入串流中，再利用 Flush() 刷新緩衝。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename socket_send.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+StreamWriter用法
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖4.4}
+\end_layout
+
+\end_inset
+
+為接受端寫法，建立 data 作為緩衝區，Socket 的 Receive 則會回傳緩衝區接收到的Bytes數目，最後再根據序列解碼成想要的格式。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename recv.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Receive用法
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+5 Microsoft SQL Server
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{5.Microsoft SQL Server}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{section}{25}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Microsoft SQL Server
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Microsoft SQL Server"
+literal "false"
+
+\end_inset
+
+為美國微軟公司推出的資料庫系統軟體，較不需要一些繁瑣的設定，自帶資料庫介面操作工具，使用起來上流暢好用，在安全性上也相當的嚴謹，更重要的是，前端使用的C#也是微
+軟推出的程式語言，因此兩者在連接上相當的容易且有彈性。
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖5.1}
+\end_layout
+
+\end_inset
+
+為 Microsoft SQL Server 的商標圖。
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename SQL.png
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{figure}{0}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Microsoft SQL Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection*
+5.1 資料表
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{subsection}{5.1 資料表}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+如
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖5.2}
+\end_layout
+
+\end_inset
+
+ 所示，本專題建立了五張資料表，主要是爬蟲後用來儲存的地方，分別是：
+\end_layout
+
+\begin_layout Itemize
+玩家 (Player)：紀錄爬到玩家的資訊，包括遊戲ID以及是否對這名玩家爬取過。
+\end_layout
+
+\begin_layout Itemize
+戰鬥 (Fight) ：紀錄每場遊戲中選擇的英雄、路線與隊伍。
+\end_layout
+
+\begin_layout Itemize
+英雄 (Champion) ：紀錄英雄名稱以及ID的相對應關係。
+\end_layout
+
+\begin_layout Itemize
+勝率 (Each Champ_Win Rate) ：紀錄每個玩家使用英雄的勝率。
+\end_layout
+
+\begin_layout Itemize
+路線(Champ_Lane) ：紀錄每隻英雄有機會出現的路線。
+\end_layout
+
+\begin_layout Standard
+玩家是用帳號的ID作為主鍵，戰鬥則用遊戲ID以及玩家帳號ID作為主鍵，英雄則用英雄ID作為主鍵，其他的資料表只是記錄英雄與路線或玩家與勝率之間的關係，因此不需要
+主鍵。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename lolsql.png
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+本專題使用之爬蟲資料表
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{圖5.3}
+\end_layout
+
+\end_inset
+
+ 則是用來紀錄使用者使用本專題後的數據，包括推薦英雄、玩家ID、預判勝率、最終結果等等，好用來日後作分析。
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename DATA.png
+	scale 85
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+本專題使用之後端資料表
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

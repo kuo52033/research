@@ -1,0 +1,180 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Mar 14 08:06:58 2020
+
+@author: user
+"""
+
+import requests
+import time
+from bs4 import BeautifulSoup
+import pyodbc
+
+
+def main():
+    #連接 Microsoft sql server
+    conn = pyodbc.connect('DRIVER={SQL Server Native Client 11.0}; SERVER=192.168.0.15\SQLEXPRESS; DATABASE=lol; UID=sa; PWD=a27336622')
+    cursor = conn.cursor()
+    #起始data 
+    firsturl = 'https://lol.moa.tw/summoner/show/tim%E7%A5%9E%E4%BA%BA'
+    firstname = 'tim神人'
+    firstid = '7503674'
+    
+    cursor.execute("insert into 玩家 values('"+firstid+"','"+firstname+"','"+firsturl+"' , '')")
+    cursor.commit()
+    #爬蟲迴圈 
+    for i in range(0 , 10):
+        #從database 取得玩家首頁的網址
+        cursor.execute("select top 1 網址 from 玩家 where 狀態 ='' ")
+        rows = cursor.fetchall()
+        for row in rows:
+            url = row.網址
+        #更新狀態（yes=已爬過）
+        conn.execute("update 玩家 set 狀態 = 'yes' where 網址 = '"+url+"' ")
+        conn.commit()
+        #開始爬蟲
+        game_crawler(url)
+    
+    
+      
+def game_crawler(url):
+    #連接玩家首頁並取得近期對戰的id
+    resp = requests.get(url)     
+    soup = BeautifulSoup(resp.text, 'html.parser')
+    Ajax = soup.find(href = '#tabs-recentgames')
+    #前十頁對戰紀錄（每頁10場）
+    for i in range(1 , 11):
+        #連接玩家對戰紀錄網址
+        recentgames = requests.get("https://lol.moa.tw" + Ajax['data-url'] + '/page:' + str(i) + '/sort:GameMatch.createDate/direction:desc')
+        recentgames_parser = BeautifulSoup(recentgames.text, 'html.parser')
+        time.sleep(2)
+        #取得該頁前十場遊戲的Id
+        recent_10_game = recentgames_parser.find_all('a', 'text-white')
+        
+        for recent in recent_10_game:
+            #連接該遊戲的網址
+            game = requests.get('https://lol.moa.tw/' + recent['href'])
+            game_content = BeautifulSoup(game.text, 'html.parser')
+            #取得詳細資訊
+            record(game_content)
+    
+
+def record(game_content):
+    conn = pyodbc.connect('DRIVER={SQL Server Native Client 11.0}; SERVER=192.168.0.15\SQLEXPRESS; DATABASE=lol; UID=sa; PWD=a27336622')
+    cursor = conn.cursor()
+    hero = []
+    name = []
+    kda = []
+    kda2 = []
+    Participation = []
+    info = []
+    danger = []
+    playerid = []
+    gameid = []
+    urla = []
+    rowa = []
+    rowa2 = []
+    
+    gametype = game_content.find('h3' , 'panel-title')
+    #去除咆哮深淵與阿福快打的場
+    try:
+        if gametype.find_all('span')[1].text != '召喚峽谷' or gametype.find_all('span')[2].text == '阿福快打':
+            return
+    except:
+        k = 0
+        
+    playerid_tmp = game_content.find_all('span' , 'sumtip')
+    hero_tmp = game_content.find_all('div', 'inline-block champion champion48 championtip ddragonchampion')
+    game_tmp = game_content.find_all('span', 'sumtip')
+    form_tmp = game_content.find_all('td' , 'info')
+    form_tmp2 = game_content.find_all('td',  'danger')
+    result_tmp = game_content.find_all('tr' , ['game-win' , 'game-lose'])[0]
+    result1 = result_tmp.get('class')
+    playerurl = game_content.find_all('span' , 'sumtip')
+      
+    Participation_compare = 0
+    for i in range(10):
+        gameid.append(gametype.find_all('span')[0].text)
+    for i in playerid_tmp:
+        playerid.append(i.get('data-sum'))
+    for i in hero_tmp:
+        hero.append(i['data-code'].strip())
+    for i in game_tmp:
+        name.append(i.text.strip()) 
+    for i in form_tmp:
+        info.append(i.text.strip())
+    for i in form_tmp2:
+        danger.append(i.text.strip())
+    for i in playerurl:
+        url = i.a.get('href')
+        urla.append('https://lol.moa.tw'+url)
+    for i in range(5,10):
+        st = info[i].replace('(' , '/').replace(')' , '/').split('/' , 3)
+        st2 = danger[i].replace('(' , '/').replace(')' , '/').split('/' , 3)
+        for i in range(0,3):
+            kda.append(st[i].strip())
+            kda2.append(st2[i].strip())
+        
+    if 'win' in result1[0]:
+        r1 = '藍'
+    else:
+        r1 = '紅'
+    
+    #遊戲id與玩家資訊存入database
+    cursor.execute("select 遊戲id from 遊戲 where 遊戲id = '"+gameid[1]+"' ")
+    rows = cursor.fetchall()
+    for row in rows:
+        rowa.append(row.遊戲id)
+    if not rowa:
+        cursor.execute("insert into 遊戲 values('"+gameid[1]+"','"+r1+"')")
+        cursor.commit()
+    else:
+        return
+            
+    for i in range(10):
+        rowa2.clear()
+        cursor.execute("select 玩家id from 玩家 where 玩家id = '"+playerid[i]+"' ")
+        rows = cursor.fetchall()
+        for row in rows:
+            rowa2.append(row.玩家id)
+        if not rowa2:
+            cursor.execute("insert into 玩家 values('"+playerid[i]+"' , '"+name[i]+"' , '"+urla[i]+"' , '')")
+            cursor.commit()
+            
+            
+    #對戰資訊存入databse
+    for i in range(10):
+        #print(gameid[i] , hero[i].replace('\n', ''), name[i].replace('\n', ''), playerid[i] , end = ' ')
+        if i in range(0,5):
+            cursor.execute("insert into 戰鬥紀錄 values('"+gameid[i]+"' , '"+playerid[i]+"' , '藍' ,'"+hero[i]+"' , '"+kda[i*3]+"' , '"+kda[i*3+1]+"', '"+kda[i*3+2]+"' , '"+info[i]+"' ,'"+info[i+10]+"','"+info[i+15]+"')")
+            
+            cursor.execute("insert into 傷害紀錄 values('"+gameid[i]+"' , '"+playerid[i]+"' , '"+info[i+25]+"' ,'"+info[i+30]+"' , '"+info[i+35]+"' , '"+info[i+40]+"', '"+info[i+45]+"' , '"+info[i+50]+"' , '"+info[i+55]+"','"+info[i+60]+"','"+info[i+65]+"')")
+            
+            cursor.execute("insert into 承受紀錄 values('"+gameid[i]+"' , '"+playerid[i]+"' , '"+info[i+70]+"' ,'"+info[i+75]+"' , '"+info[i+80]+"' , '"+info[i+85]+"', '"+info[i+90]+"')")
+            
+            cursor.execute("insert into 守衛紀錄 values('"+gameid[i]+"' , '"+playerid[i]+"' , '"+info[i+95]+"' ,'"+info[i+100]+"' , '"+info[i+110]+"')")
+            
+            cursor.execute("insert into 收入紀錄 values('"+gameid[i]+"' , '"+playerid[i]+"' , '"+info[i+115]+"' ,'"+info[i+120]+"' , '"+info[i+125]+"' , '"+info[i+130]+"', '"+info[i+135]+"' ,'"+info[i+140]+"')")
+            cursor.commit()
+           # print('level:'+info[i]+' 同時最高擊殺數:'+info[i+10]+' 最高連殺:'+info[i+15]+' 對英雄傷害:'+info[i+25]+' 對英雄物傷:'+info[i+30]+' 對英雄法傷:'+info[i+35]+' 對英雄真傷:'+info[i+40]+' 輸出傷害:'+info[i+45]+' 物理傷害:'+info[i+50]+' 魔法傷害:'+info[i+55]+' 真實傷害:'+info[i+60]+' 最高暴擊傷害:'+info[i+65]+' 回復生命:'+info[i+70]+' 承受傷害:'+info[i+75]+' 承受物傷:'+info[i+80]+' 承受法傷:'+info[i+85]+' 承受真傷:'+info[i+90]+' 放置守衛:'+info[i+95]+' 清除守衛:'+info[i+100]+' 購買隱藏守衛:'+info[i+105]+' 購買真視守衛:'+info[i+110]+' 獲得金錢:'+info[i+115]+' 花費金錢:'+info[i+120]+' 擊殺小兵:'+info[i+125]+' 擊殺野怪:'+info[i+130]+' 擊殺自家野怪:'+info[i+135]+' 擊殺敵方野怪:'+info[i+140])
+        else:
+            cursor.execute("insert into 戰鬥紀錄 values('"+gameid[i]+"' , '"+playerid[i]+"' , '紅' ,'"+hero[i]+"' , '"+kda2[(i-5)*3]+"' , '"+kda2[(i-5)*3+1]+"', '"+kda2[(i-5)*3+2]+"' , '"+danger[i-5]+"' ,'"+danger[i+5]+"','"+danger[i+10]+"')")
+            
+            cursor.execute("insert into 傷害紀錄 values('"+gameid[i]+"' , '"+playerid[i]+"' , '"+danger[i+20]+"' ,'"+danger[i+25]+"' , '"+danger[i+30]+"' , '"+danger[i+35]+"', '"+danger[i+40]+"' , '"+danger[i+45]+"' , '"+danger[i+50]+"','"+danger[i+55]+"','"+danger[i+60]+"')")
+            
+            cursor.execute("insert into 承受紀錄 values('"+gameid[i]+"' , '"+playerid[i]+"' , '"+danger[i+65]+"' ,'"+danger[i+70]+"' , '"+danger[i+75]+"' , '"+danger[i+80]+"', '"+danger[i+85]+"')")
+            
+            cursor.execute("insert into 守衛紀錄 values('"+gameid[i]+"' , '"+playerid[i]+"' , '"+danger[i+90]+"' ,'"+danger[i+95]+"' , '"+danger[i+105]+"')")
+            
+            cursor.execute("insert into 收入紀錄 values('"+gameid[i]+"' , '"+playerid[i]+"' , '"+danger[i+110]+"' ,'"+danger[i+115]+"' , '"+danger[i+120]+"' , '"+danger[i+125]+"', '"+danger[i+130]+"' ,'"+danger[i+135]+"')")
+            cursor.commit()
+           # print('level:'+danger[i-5]+' 同時最高擊殺數:'+danger[i+5]+' 最高連殺:'+danger[i+10]+' 對英雄傷害:'+danger[i+20]+' 對英雄物傷:'+danger[i+25]+' 對英雄法傷:'+danger[i+30]+' 對英雄真傷:'+danger[i+35]+' 輸出傷害:'+danger[i+40]+' 物理傷害:'+danger[i+45]+' 魔法傷害:'+danger[i+50]+' 真實傷害:'+danger[i+55]+' 最高暴擊傷害:'+danger[i+60]+' 回復生命:'+danger[i+65]+' 承受傷害:'+danger[i+70]+' 承受物傷:'+danger[i+75]+' 承受法傷:'+danger[i+80]+' 承受真傷:'+danger[i+85]+' 放置守衛:'+danger[i+90]+' 清除守衛:'+danger[i+95]+' 購買隱藏守衛:'+danger[i+100]+' 購買真視守衛:'+danger[i+105]+' 獲得金錢:'+danger[i+110]+' 花費金錢:'+danger[i+115]+' 擊殺小兵:'+danger[i+120]+' 擊殺野怪:'+danger[i+125]+' 擊殺自家野怪:'+danger[i+130]+' 擊殺敵方野怪:'+danger[i+135])
+        print()
+    print('\n')
+    
+    
+    return
+    
+
+if __name__ == '__main__':
+    main()

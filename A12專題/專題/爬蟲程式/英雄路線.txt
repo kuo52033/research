@@ -1,0 +1,62 @@
+resp = requests.get('https://www.op.gg/champion/statistics')
+soup = BeautifulSoup(resp.text, 'html.parser')
+soup = soup.find('div' , 'champion-index__champion-list')
+road  = soup.find_all('div' , 'champion-index__champion-item__positions')
+road_ = []
+dic = {'champion':[] , 'road':[]}
+champ_road = pd.DataFrame(dic)
+
+for i in road:
+    road_.append(i.text)
+
+champ_ = []
+for i in soup:
+    if i.get('data-champion-key') == 'monkeyking':
+        champ_.append('MonkeyKing')
+    elif i.get('data-champion-key') == 'drmundo':
+        champ_.append('DrMundo')
+    elif i.get('data-champion-key') == 'fiddlesticks':
+        champ_.append('FiddleSticks')
+    elif i.get('data-champion-key') == 'jarvaniv':
+        champ_.append('JarvanIV')
+    elif i.get('data-champion-key') == 'kogmaw':
+        champ_.append('KogMaw')
+    elif i.get('data-champion-key') == 'masteryi':
+        champ_.append('MasterYi')
+    elif i.get('data-champion-key') == 'missfortune':
+        champ_.append('MissFortune')
+    elif i.get('data-champion-key') == 'reksai':
+        champ_.append('RekSai')
+    elif i.get('data-champion-key') == 'tahmkench':
+        champ_.append('TahmKench')
+    elif i.get('data-champion-key') == 'twistedfate':
+        champ_.append('TwistedFate')
+    elif i.get('data-champion-key') == 'xinzhao':
+        champ_.append('XinZhao')
+    elif i.get('data-champion-key') == 'aurelionsol':
+        champ_.append('AurelionSol')
+    elif i.get('data-champion-key') == 'leesin':
+        champ_.append('LeeSin')
+    else:
+        champ_.append(i.get('data-champion-key').capitalize())
+        
+k = 0
+for i in road_:
+    r = re.findall('.{2}',i)
+    for j in r:
+        if j == "下路":
+            w = {'champion':champ_[k] , 'road': 'BOTTOM'}
+            champ_road = champ_road.append(w , ignore_index= True)
+        elif j =='輔助':
+            w = {'champion':champ_[k] , 'road': 'SUPPORT'}
+            champ_road = champ_road.append(w , ignore_index= True)
+        elif j =='中路':
+            w = {'champion':champ_[k] , 'road': 'MID'}
+            champ_road = champ_road.append(w , ignore_index= True)
+        elif j =='上路':
+            w = {'champion':champ_[k] , 'road': 'TOP'}
+            champ_road = champ_road.append(w , ignore_index= True)
+        elif j =='打野':
+            w = {'champion':champ_[k] , 'road': 'JUNGLE'}
+            champ_road = champ_road.append(w , ignore_index= True)
+    k = k+1

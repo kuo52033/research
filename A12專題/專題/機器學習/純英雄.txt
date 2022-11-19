@@ -1,0 +1,53 @@
+from sklearn.tree import DecisionTreeClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.datasets import load_wine
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import cross_val_score
+from sklearn.model_selection import GridSearchCV
+import numpy as np
+import pandas as pd
+import graphviz
+import matplotlib.pyplot as plt
+import pyodbc
+
+conn = pyodbc.connect('DRIVER={SQL Server Native Client 11.0}; SERVER=192.168.0.13\SQLEXPRESS; DATABASE=lol; UID=sa; PWD=a27336622')
+
+query = "select fight.gameid , champ_name , win , teamid from fight , champion , game where champion.id = fight.champion and game.gameid = fight.gameid"
+data = pd.read_sql(query, conn)
+i = data["gameid"].unique().tolist() 
+#data["gameid"] = data["gameid"].apply(lambda x: i.index(x)) #將gameid 轉為從0開始
+data.iloc[: , 2 ] = (data['win'] =='100').astype('int') #100 = 藍方(1) 200 = 紅方(0)
+data.iloc[: , 3 ] = (data['teamid'] =='100').astype('int') #100 = 藍方(1) 200 = 紅方(0)
+
+x = pd.get_dummies(data) 
+
+a = pd.DataFrame()
+f = lambda x , y:1 in y.iloc[: , x].values
+f2 = lambda x , y : (y.iloc[: , x] == 1).tolist().index(True)
+for i in range(0 , len(x["gameid"]) , 10):
+    y = x.iloc[i:i+10, :]
+    for j in range(3 , len(y.columns)):
+        if f(j , y):
+            if y['teamid'].iloc[f2(j , y)] == 1:
+                y.iloc[: , j] = 2
+            else:
+                y.iloc[: , j] = 1
+        else:
+            continue
+    y = y.iloc[: , y.columns != 'teamid']
+    b = y.drop_duplicates(subset=None, keep='first', inplace=False)
+    a = pd.concat([a , b])
+
+fea = a.iloc[: , a.columns != 'win']
+fea = fea.iloc[: , fea.columns != 'gameid']
+tar = a.iloc[: , a.columns == 'win']
+
+xtrain , xtest ,ytrain , ytest = train_test_split(fea , tar , test_size = 0.3)
+for i in (xtrain , xtest ,ytrain , ytest):
+    i.index = range(i.shape[0])
+
+rfc = RandomForestClassifier( n_estimators=21 , random_state=70)
+rfc = rfc.fit(xtrain , ytrain.values.ravel())
+score  = rfc.score(xtest , ytest)
+score
+

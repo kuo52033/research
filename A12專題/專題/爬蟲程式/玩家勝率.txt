@@ -1,0 +1,31 @@
+import pyodbc
+from bs4 import BeautifulSoup
+import requests
+
+conn = pyodbc.connect('DRIVER={SQL Server Native Client 11.0};SERVER=192.168.0.13\SQLEXPRESS; DATABASE=lol; UID=sa;PWD=a27336622')
+cursor = conn.cursor()
+
+cursor.execute("select accountid from  player where accountid not in (select distinct accountid from eachchamp_winrate)")
+rows = cursor.fetchall()
+
+for i in rows:
+    try:
+        resp = requests.get('https://lol.moa.tw/Ajax/aggregate/'+str(i[0])+'/10')
+        soup = BeautifulSoup(resp.text, 'html.parser')
+
+        allchamp = soup.find_all('img')
+        winrate = soup.find_all('td' , style = 'width:50px;')
+        winrate_ = []
+        champ_ = []
+
+        for j in range(5 , len(winrate) , 3):
+            winrate_.append(winrate[j].text.strip('%'))
+
+        for k in allchamp[1:]:
+            champ_.append(k.get('class')[2].split('-')[1])
+
+        for m in range(len(winrate_)):
+            cursor.execute("insert into eachchamp_winrate values(?,?,?)" , i[0] , champ_[m] , winrate_[m])
+        cursor.commit()          
+    except:
+        None

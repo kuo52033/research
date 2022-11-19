@@ -1,0 +1,9 @@
+import requests
+import json
+
+
+r=requests.get('https://ddragon.leagueoflegends.com/cdn/10.22.1/data/zh_TW/champion.json')
+doc=json.loads(r.text)
+
+for i in doc['data']:
+    print('insert into champion values(' + doc['data'][i]['key'] + ', '  +"'"+ doc['data'][i]['id'] +"'"+ ')')

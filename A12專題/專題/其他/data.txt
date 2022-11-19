@@ -1,0 +1,193 @@
+def data(url):
+    resp = requests.get(url)
+    soup = BeautifulSoup(resp.text, 'html.parser')   
+
+    resulta = [] 
+    playera = []
+    legendnamea = []
+    levela = []
+    ranka = []
+    killa = []
+    deatha = []
+    assista = []
+    killratea = []
+    kdaa = []
+    damagea = []
+    controlwarda = []
+    usewarda = []
+    rewarda = []
+    csa = []
+    csperminutea = []
+    barona = []
+    dragona = []
+    towera = []
+    totalkilla = []
+    totalgolda = []
+    itema = [[0 for i in range(7)] for j in range(10)]
+
+    result = soup.find_all('th' , 'HeaderCell' , colspan='4')
+    resulta.append(result[0].text.strip().replace('\t' , '').replace('\n' , ''))
+    resulta.append(result[1].text.strip().replace('\t' , '').replace('\n' , ''))
+
+
+    legend = soup.find_all('td' , 'ChampionImage Cell')
+
+    for everylegend in legend:
+        legendname = everylegend.find_all('div')[0].text
+        level = everylegend.find('div' , 'Level').text
+        legendnamea.append(legendname)
+        levela.append(level)
+
+    player = soup.find_all('td' , 'SummonerName Cell')
+
+    for everyplayer in player:
+        player = everyplayer.find('a' , 'Link').text
+        playera.append(player)
+
+    rank = soup.find_all('td' , ['Tier Cell tip' , 'Tier Cell'])
+
+    for r in rank:
+        ranka.append(r.text.strip())
+
+    kda = soup.find_all('td' , 'KDA Cell')
+
+    for k in kda:
+        kill = k.find('span' , 'Kill').text
+        death = k.find('span' , 'Death').text
+        assist = k.find('span' , 'Assist').text
+        killrate = k.find('span' , 'CKRate tip').text
+        kda = k.span.text.replace(':1' , '')
+        killa.append(kill)
+        deatha.append(death)
+        assista.append(assist)
+        killratea.append(killrate)
+        kdaa.append(kda)
+
+    damage = soup.find_all('div' ,'ChampionDamage' )
+
+    for d in damage:
+        damage = d.text.strip()
+        damagea.append(damage)
+
+    ward = soup.find_all('td' , 'Ward Cell tip')
+
+    for w in ward:
+        controlward = w.find('span' , 'SightWard').text.strip()
+        useward = w.find('div' , 'Stats').span.text.strip()
+        reward = w.find_all('span')[2].text.strip()
+        controlwarda.append(controlward)
+        usewarda.append(useward)
+        rewarda.append(reward)
+
+    cs = soup.find_all('td' , 'CS Cell')
+
+    for c in cs:
+        cs = c.find('div' , 'CS').text
+        csperminute = c.find('div' , 'CSPerMinute').text.replace('每秒' , '')
+
+        csa.append(cs)
+        csperminutea.append(csperminute)
+
+    item = soup.find_all('td' , 'Items Cell')
+
+    count = -1
+    for i in item:
+        count2 = 0
+        count = count+1
+        item2 = i.find_all('div' , 'Item')
+        for j in item2:
+            if j.find('img'):
+             itemm = j.img.get('alt')
+             itema[count][count2] = itemm
+             count2 = count2+1
+
+    summary = soup.find('div' , 'Summary')
+    s = summary.find_all('div' , 'ObjectScore')
+    barona.append(s[0].text.strip())
+    barona.append(s[3].text.strip())
+
+    dragona.append(s[1].text.strip())
+    dragona.append(s[4].text.strip())
+
+    towera.append(s[2].text.strip())
+    towera.append(s[5].text.strip())
+    left = summary.find_all('div' , 'text graph--data graph--data__left')
+    totalkilla.append(left[0].text.strip())
+    totalgolda.append(left[1].text.strip())
+    right = summary.find_all('div' , 'text graph--data graph--data__right')
+    totalkilla.append(right[0].text.strip())
+    totalgolda.append(right[1].text.strip())
+
+
+
+
+    for i in range(0,10):
+        if i==0:
+            print(resulta[0]+' totalkill: '+totalkilla[0]+' totalgold: '+totalgolda[0]+' baron: '+barona[0]+' dragon: '+dragona[0]+' tower: '+towera[0] , '\n')
+        if i==5:
+            print(resulta[1]+' totalkill: '+totalkilla[1]+' totalgold: '+totalgolda[1]+' baron: '+barona[1]+' dragon: '+dragona[1]+' tower: '+towera[1] , '\n')
+           
+
+        print(playera[i]+' ('+ranka[i]+') '+legendnamea[i]+' Level:'+levela[i]+' '+killa[i]+'/'+deatha[i]+'/'+assista[i]+' kda: '+kdaa[i]+' 擊殺參與率: '+killratea[i]+' dmg: '+damagea[i]+' 控制守衛: '+controlwarda[i]+' 安裝守衛: '+usewarda[i]+' 去除守衛: '+rewarda[i]+' cs: '+csa[i]+' csperminute: '+csperminutea[i]+' item: ',end = ' ')
+        for j in range(len(itema[i])):
+            if itema[i][j] != 0:
+             print(itema[i][j] ,end = ' ')
+        print('\n')
+
+    return
+
+def geturl(url):
+    resp = requests.get(url)
+    soup = BeautifulSoup(resp.text, 'html.parser')
+    game = soup.find_all('div' , 'GameItemWrap')
+    gameid = []
+    summonerid = []
+    gametimeid = []
+    urla = []
+
+    for g in game:
+        gid = g.div.get('data-game-id')
+        summoner = g.div.get('data-summoner-id')
+        time = g.div.get('data-game-time')
+        gameid.append(gid)
+        summonerid.append(summoner)
+        gametimeid.append(time)
+         
+    for i in range(len(gameid)):
+        urla.append('https://www.op.gg/summoner/matches/ajax/detail/gameId='+gameid[i]+'&summonerId='+summonerid[i]+'&gameTime='+gametimeid[i])
+
+    return urla
+
+def getgamelenth(url):
+    resp = requests.get(url)
+    soup = BeautifulSoup(resp.text, 'html.parser')
+    gamelentha = []
+    
+    gamelenth = soup.find_all('div' , 'GameLength')
+    for t in gamelenth:
+        gamelentha.append(t.text.strip())
+    
+    return gamelentha
+
+def getgametype(url):
+    resp = requests.get(url)
+    soup = BeautifulSoup(resp.text, 'html.parser')
+    gametypea = []
+    
+    gametype = soup.find_all('div' , 'GameType')
+    for t in gametype:
+        gametypea.append(t.text.strip())
+    
+    return gametypea
+
+import requests
+from bs4 import BeautifulSoup
+playerurl ='https://www.op.gg/summoner/userName=Hide+on+bush'
+url = geturl(playerurl)
+gamelenth = getgamelenth(playerurl)
+gametype = getgametype(playerurl)
+for i in range(0,20):
+    print('第' , i+1 , '場 ' , gametype[i] ,' ', gamelenth[i], '\n')   
+    data(url[i])
+    
+    

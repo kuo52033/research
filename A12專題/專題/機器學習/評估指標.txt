@@ -1,0 +1,8 @@
+from sklearn.metrics import classification_report
+from sklearn.metrics import confusion_matrix
+#from sklearn.metrics import f1_score , recall_score , precision_score , accuracy_score
+
+ypred = rfc.predict(xtest)
+print("confusion matrix:\n" , confusion_matrix(ytest , ypred))
+print(classification_report(ytest, ypred , target_names=['red' , 'blue']))
+#print('accurancy:%f f1_score:%f precision:%f recall:%f' %(accuracy_score(ytest ,ypred) , f1_score(ytest , ypred) , precision_score(ytest , ypred) , recall_score(ytest , ypred)))
